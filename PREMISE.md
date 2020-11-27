@@ -6,3 +6,4 @@ Onde suas escolhas influenciaram em, seguir por dois caminhos, o caminho Arena, 
 Funcionando com um sistema de geração de mapas aleatório, onde mesmo que você morra 10x, você não terá como memorizar uma sequência adequada antes de vencer.
 Você sempre terá que fazer uma escolha dentro do game, desde escolher se quer usar um arco para lutar, ou uma bota para correr mais rápido.</p>
 <p>Tudo isso ocorrendo enquanto você disputa com seu colega para ver quem chega antes no final da fase.</p>
+
