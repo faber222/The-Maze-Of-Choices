@@ -1,0 +1,16 @@
+<DOCTYPE md>
+    <h1></h1>
+<h1>Referências: literatura, mídias em geral e outros jogos </h1>
+    <p>O jogo vai ser uma mistura de speedrun com batalhas e escolhas, vai ser baseado a parte da luta em "The legends of zelda The minish cap", e a parte das escolhas em Black Mirror: Bandersnatch.</p>
+<h1>Roteiro: inicio, meio e fim</h1>    
+    <p>O jogo vai ser bem simples, por se tratar de uma corrida de obstaculos, o <bound>inicio</bound> vai ser uma largada, onde os 2 jogares terão que escolher o caminho ao qual vão disputar, no caso, Labirinto ou Arena, depois do tempo para o inicio da partida, os jogares vão se dirigir aos seus respectivos cenários e vão começar a disputa a partir daí.</p>
+    <p><bound>Meio</bound> Depois de adentrarem aos seus cenários, os jogadores terão que enfrentar os problemas caracteristicos de cada mapa, o jogador da arena vai ter que batalhar pela vida, e se morrer voltará ao lobby, e recomeçara, o jogador do labirinto vai ter que ser inteligente e ir escolhendo os caminhos corretos, tanto para não se perder quanto para não sofrer com problemas que alguns caminhos trarão.</p>
+    <p><bound>Fim</bound> A parte mais simploria, ao final de cada mapa, existirá uma saída, e aquele que atravessa-la primeiro, irá ganhar o jogo, fazendo com que o outro integrante fique congelado, e com uma mensagem na tela aparecendo o placar e o vencedor, e os respectivos botões de iniciar novo jogo ou sair.</p>
+<h1>Personagem: perfis, evolução</h1>
+    <p>Por se tratar de um jogo de corrida, e o que importa é o mapa e as escolhas dos jogarores, os personagens serão padrões, não possuirão história, ou um propósito digno, apenas terão que correr para vencer.</p>
+<h1> Artefatos: armas, poções etc.</h1>
+    <p><bound>Armas</bound> Pretendemos introduzir no mapa Arena, espadas, escudos e arco e flecha, com ranking de poder, botas de mobilidade para arena, baus (conterão efeitos aleatorios ou fragmentos de mapa do labirinto) para o labirinto</p>
+    <p><bound>Poções</bound> Iremos introduzir no mapa, para cada nova arena ou area do labirinto, efeitos de terreno, ao invés de dar ao jogador a oportunidade de usar poções, iremos colocar efeitos aleatórios nos cenários, para deixar a disputa ainda mais dificil</p>
+    <p><bound>Efeitos</bound> Arena= cura, veneno, fraqueza, lentidão, redução de armadura, velocidade, +dano, armadura, -+durabilidade do item, +vida dos inimigos/Labirinto= velocidade, cegueira, enraizamento, lentidão, aumento de visão, imunidade, teleporte</p>
+<h1>Mundo / Universo</h1>
+    <p><bound>Universo</bound> O jogo é pra ser ambientado totalmente em 16bits. A arena vai ser um campo de batalha com um labirinto de portas, cheias de inimigos, e cada porta vai trazer um efeito aleatorio ao personagem, e você deve escolher a porta correta para avançar, levando em conta que a cada porta errada, você vai estar perdendo tempo, e ficando atrás na corrida. O labirinto vai ser gerado aleatoriamente, e o jogador ao entrar no labirinto, vai iniciar com a visão limitada, e ao anvaçar no labirinto, esse mesmo jogador vai encontrar baus, e nesses baus vai poder abrir e coletar efeitos aleatorios, e dependendo da sorte do jogador, vai poder encontrar até fragmentos do mapa.</p>
