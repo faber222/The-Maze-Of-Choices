@@ -1,5 +1,3 @@
-<DOCTYPE md>
-    <h1></h1>
 <h1>Referências: literatura, mídias em geral e outros jogos </h1>
     <p>O jogo vai ser uma mistura de speedrun com batalhas e escolhas, vai ser baseado a parte da luta em "The legends of zelda The minish cap", e a parte das escolhas em Black Mirror: Bandersnatch.</p>
 <h1>Roteiro: inicio, meio e fim</h1>    
