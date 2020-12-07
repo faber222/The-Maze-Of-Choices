@@ -1,8 +1,8 @@
-
-var config = {
+const config = {
     type: Phaser.AUTO,
     width: 800,
     height: 600,
+    parent: "game-container",
     physics: {
         default: 'arcade',
         arcade: {
@@ -25,10 +25,10 @@ var score = 0;
 var scoreText;
 var gameOver = false;
 
-var game = new Phaser.Game(config);
+const game = new Phaser.Game(config);
 
 function preload () {
-    this.load.image('céu', 'assets/sky.png');
+    this.load.image('sky', 'assets/sky.png');
     this.load.image('ground', 'assets/platform.png');
     this.load.image('star', 'assets/star.png');
     this.load.image('bomb', 'assets/bomb.png');
@@ -36,8 +36,9 @@ function preload () {
 }
 
 function create () {
-    this.add.image(400, 300, 'céu');
-
+    this.add.image(400, 300, 'sky');
+    
+    platforms = this.physics.add.staticGroup();
 
     platforms.create(400, 568, 'ground').setScale(2).refreshBody();
 
