@@ -28,7 +28,7 @@ var gameOver = false;
 var game = new Phaser.Game(config);
 
 function preload () {
-    this.load.image('sky', 'assets/sky.png');
+    this.load.image('céu', 'assets/sky.png');
     this.load.image('ground', 'assets/platform.png');
     this.load.image('star', 'assets/star.png');
     this.load.image('bomb', 'assets/bomb.png');
@@ -36,7 +36,7 @@ function preload () {
 }
 
 function create () {
-    this.add.image(400, 300, 'sky');
+    this.add.image(400, 300, 'céu');
 
     platforms = this.physics.add.staticGroup();
 
