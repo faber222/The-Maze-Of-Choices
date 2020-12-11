@@ -1,5 +1,5 @@
 <h1>Referências: literatura, mídias em geral e outros jogos </h1>
-    <p>O jogo vai ser uma mistura de speedrun com batalhas e escolhas, vai ser baseado a parte da luta em "The legends of zelda The minish cap", e a parte das escolhas em Black Mirror: Bandersnatch.</p>
+    <p>O jogo vai ser uma mistura de speedRun com batalhas e escolhas, vai ser baseado a parte da luta em "The legends of zelda The minish cap", e a parte das escolhas em Black Mirror: Bandersnatch.</p>
 <h1>Roteiro: inicio, meio e fim</h1>    
     <p>O jogo vai ser bem simples, por se tratar de uma corrida de obstáculos, o <b>inicio</b> vai ser uma largada, onde os 2 jogares terão que escolher o caminho ao qual vão disputar, no caso, Labirinto ou Arena, depois do tempo para o inicio da partida, os jogares vão se dirigir aos seus respetivos cenários e vão começar a disputa a partir daí.</p>
     <p><b>Meio</b> Depois de adentrarem aos seus cenários, os jogadores terão que enfrentar os problemas característicos de cada mapa, o jogador da arena vai ter que batalhar pela vida, e se morrer voltará ao lobby, e recomeçara, o jogador do labirinto vai ter que ser inteligente e ir escolhendo os caminhos corretos, tanto para não se perder quanto para não sofrer com problemas que alguns caminhos trarão.</p>

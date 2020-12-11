@@ -1,4 +1,5 @@
 <h1>O labirinto das escolhas</h1>
+
 <p>Um lugar estranho, desafiador, aleatório e com um toque de speed run.
 Ambientado em um cenário pixelado, com um sistema de lutas baseado em The Legend of Zelda The Minish Cap.
 Onde suas escolhas influenciaram em, seguir por dois caminhos, o caminho Arena, com batalhas e diversas salas que você vai ter que explorar para encontrar a saída, ou o Labirinto, tranquilo, sem inimigos, você teria apenas que buscar pelo caminho certo, enquanto abre baús para encontrar o mapa que te levara a saída.</p>
