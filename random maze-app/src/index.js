@@ -44,7 +44,6 @@ const config = {
    
   }
   
-  
   function create() {
     const map = this.make.tilemap({key : "map"});
     const map2 = this.make.tilemap({key: "objectCollider"});
