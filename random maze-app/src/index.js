@@ -32,21 +32,16 @@ function preload() {
 
 function create() {
   const map = this.make.tilemap({key : "map"});
-  const map2 = this.make.tilemap({key: "objectCollider"});
   const tileset = map.addTilesetImage("assets", "tiles");
 
   const ground = map.createStaticLayer("ground", tileset, 0, 0);
-  const ground2 = map2.createStaticLayer("ground2", tileset, 0, 0);
   const objectCollider = map.createStaticLayer("objectCollider", tileset, 0, 0);
-  const aboveCollider = map.createStaticLayer("aboveObject", tileset, 0, 0);
 
   player = this.physics.add.sprite(100,200, "player");
   
   objectCollider.setCollisionByProperty({ collider: true });
-  ground.setCollisionByProperty({ collider: true });
-  ground2.setCollisionByProperty
   player.setCollideWorldBounds(true);
-  this.physics.add.collider(player, map2);
+  this.physics.add.collider(player, objectCollider);
 
   const anims = this.anims;
   anims.create({
@@ -84,13 +79,22 @@ function update() {
    
   
 
-  if(cursors.left.isDown){
-    player.body.setVelocityX(-200); 
-  } else if (cursors.right.isDown){
-    player.body.setVelocityX(200);
-  } else if (cursors.up.isDown){
-    player.body.setVelocityY(-200);
-  } else if (cursors.down.isDown){
-    player.body.setVelocityY(200);
+  if (cursors.left.isDown) {
+    player.body.setVelocityX(-100);
+    player.anims.play("left", true);
+  } else if (cursors.right.isDown) {
+    player.body.setVelocityX(100);
+    player.anims.play("right", true);
+  } else {
+    player.body.setVelocity(0);
+    player.anims.play("stopped", true);
+  }
+
+  if (cursors.up.isDown) {
+    player.body.setVelocityY(-100);
+  } else if (cursors.down.isDown) {
+    player.body.setVelocityY(100);
+  } else {
+    player.body.setVelocityY(0);
   }
 }
