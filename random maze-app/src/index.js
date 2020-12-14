@@ -1,3 +1,4 @@
+
 const config = {
     type: Phaser.AUTO,
     width: 800,
@@ -93,5 +94,4 @@ const config = {
     } else {
       player.body.setVelocityY(0);
     }
-  }
-  
+}
