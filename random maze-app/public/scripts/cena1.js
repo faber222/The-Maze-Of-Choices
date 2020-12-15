@@ -1,40 +1,22 @@
+  //import { cena2 } from "./";
 
-const config = {
-    type: Phaser.AUTO,
-    width: 800,
-    height: 800,
-    parent: "game-container",
-    physics: {
-      default: "arcade",
-      arcade: {
-        gravity: { y: 0 },
-      },
-    },
-    scene: {
-      preload: preload,
-      create: create,
-      update: update,
-    },
-  };
-  
-  const game = new Phaser.Game(config);
+  var cena1 = new Phaser.Scene ("cena1");
   let player;
   var cursors;
   
-  function preload() {
-    this.load.tilemapTiledJSON("objectCollider", "../public/assets/objectCollider.json");
-    this.load.image("tiles", "../public/assets/mapPeck.png");
-    this.load.tilemapTiledJSON("map", "../public/assets/map.json");
-    this.load.spritesheet("player", "../public/assets/player.png", {
+  cena1.preload = function () {
+    this.load.tilemapTiledJSON("objectCollider", "../assets/objectCollider.json");
+    this.load.image("tiles", "../assets/mapPeck.png");
+    this.load.tilemapTiledJSON("map", "../assets/map.json");
+    this.load.spritesheet("player", "../assets/player.png", {
       frameWidth: 16,
       frameHeight: 16,
     });
   }
   
-  function create() {
+  cena1.create = function () {
     const map = this.make.tilemap({ key: "map" });
     const tileset = map.addTilesetImage("assets", "tiles");
-  
     const ground = map.createStaticLayer("ground", tileset, 0, 0);
     const objectCollider = map.createStaticLayer("objectCollider", tileset, 0, 0);
   
@@ -75,7 +57,7 @@ const config = {
     cursors = this.input.keyboard.createCursorKeys();
   }
   
-  function update() {
+  cena1.update = function () {
     if (cursors.left.isDown) {
       player.body.setVelocityX(-100);
       player.anims.play("left", true);
@@ -95,3 +77,5 @@ const config = {
       player.body.setVelocityY(0);
     }
 }
+
+export { cena1 };

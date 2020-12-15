@@ -1,3 +1,5 @@
+import { cena1 } from "../scripts/cena1.js";
+
 const config = {
     type: Phaser.AUTO,
     width: 800,
@@ -9,9 +11,7 @@ const config = {
         gravity: { y: 0 },
       },
     },
-    scene: {
-      preload: preload,
-      create: create,
-      update: update,
-    },
+    scene: [cena1],
   };
+
+const game = new Phaser.Game(config);
