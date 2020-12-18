@@ -7,7 +7,7 @@ var abertura;
 var button;
 
 cena0.preload = function () {
-  // Imagem de fundo 
+  // Imagem de fundo  
   this.load.image("start", "../assets/cena0.png");
   this.load.audio("abertura", "../sounds/wait.ogg");
 };
