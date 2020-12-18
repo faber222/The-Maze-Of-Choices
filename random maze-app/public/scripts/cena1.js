@@ -201,7 +201,7 @@
 }
 function hitWall(objectCollider) {
   //som de batida
-  wall.play();
+  wall.play(); 
 }
 
 //função que faz a contagem regressiva
