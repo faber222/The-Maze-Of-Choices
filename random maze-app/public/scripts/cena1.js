@@ -56,11 +56,11 @@
     const ground = map.createStaticLayer("ground", tileset, 0, 0);
     const objectCollider = map.createStaticLayer("objectCollider", tileset, 0, 0);
 
-    
+
     //código que adiciona a física de posição de spawn, colisão com borda e colisão entre parede
     objectCollider.setCollisionByProperty({ collider: true });
-    player1 = this.physics.add.sprite(100, 100, "player1");
-    player2 = this.physics.add.sprite(100, 120, "player2");
+    player1 = this.physics.add.sprite(350, 170, "player1");
+    player2 = this.physics.add.sprite(150, 180, "player2");
     player1.setCollideWorldBounds(true);
     player2.setCollideWorldBounds(true);
     this.physics.add.collider(player1, objectCollider, hitWall, null, true);
@@ -84,6 +84,8 @@
     });
     timerText.setScrollFactor(0);
 
+    this.cameras.main.setBounds(0, 0, 1920, 1080);
+    this.physics.world.setBounds(0, 0, 1920, 1080);
     //Camera vai seguir o personagem
     this.cameras.main.startFollow(player1);
   
