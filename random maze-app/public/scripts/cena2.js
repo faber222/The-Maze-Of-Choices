@@ -1,5 +1,5 @@
 // Importar a próxima cena
-import { cena1 } from "../scripts/cena1.js";
+import { cena0 } from "../scripts/cena0.js";
 
 // Criar a cena 2
 const cena2 = new Phaser.Scene("Cena 2");
@@ -23,7 +23,7 @@ cena2.create = function () {
 
   // Ao clicar no botão, volta para a cena 1
   button.on("pointerdown", function () {
-      this.scene.start(cena1);
+      this.scene.start(cena0);
       //para a musica
       loser.stop();
     },

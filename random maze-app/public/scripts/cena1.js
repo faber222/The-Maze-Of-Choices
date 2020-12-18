@@ -94,8 +94,8 @@
     anims.create({
       key: "left1",
       frames: anims.generateFrameNames("player1", {
-        start: 4,
-        end: 8,
+        start: 10,
+        end: 14,
       }),
       frameRate: 10,
       repeat: -1,
@@ -103,8 +103,8 @@
     anims.create({
       key: "left2",
       frames: anims.generateFrameNames("player2", {
-        start: 4,
-        end: 8,
+        start: 10,
+        end: 14,
       }),
       frameRate: 10,
       repeat: -1,
@@ -112,8 +112,8 @@
     anims.create({
       key: "right1",
       frames: anims.generateFrameNames("player1", {
-        start: 0,
-        end: 3,
+        start: 4,
+        end: 9,
       }),
       frameRate: 10,
       repeat: -1,
@@ -121,28 +121,46 @@
     anims.create({
       key: "right2",
       frames: anims.generateFrameNames("player2", {
-        start: 0,
-        end: 3,
+        start: 4,
+        end: 9,
       }),
       frameRate: 10,
+      repeat: -1,
+    });
+    anims.create({
+      key: "up1",
+      frames: anims.generateFrameNames("player1", {
+        start: 15,
+        end: 18,
+      }),
+      frameRate: 2,
+      repeat: -1,
+    });
+    anims.create({
+      key: "up2",
+      frames: anims.generateFrameNames("player2", {
+        start: 15,
+        end: 18,
+      }),
+      frameRate: 2,
       repeat: -1,
     });
     anims.create({
       key: "stopped1",
       frames: anims.generateFrameNames("player1", {
         start: 0,
-        end: 1,
+        end: 3,
       }),
-      frameRate: 10,
+      frameRate: 5,
       repeat: -1,
     });
     anims.create({
       key: "stopped2",
       frames: anims.generateFrameNames("player2", {
         start: 0,
-        end: 1,
+        end: 3,
       }),
-      frameRate: 10,
+      frameRate: 5,
       repeat: -1,
     });
     //seleção do controle dos personagens 1 e 2
@@ -171,6 +189,7 @@
     }
     if (cursors.up.isDown) {
       player1.body.setVelocityY(-100);
+      player1.anims.play("up1", true);
       //barulho enquanto anda
       walk2.play();
     } else if (cursors.down.isDown) {
@@ -195,6 +214,7 @@
     }
     if (up.isDown) {
       player2.body.setVelocityY(-100);
+      player2.anims.play("up2", true);
       walk2.play();
     } else if (down.isDown) {
       player2.body.setVelocityY(100);
