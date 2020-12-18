@@ -15,11 +15,11 @@
   
   cena1.preload = function () {
     //carregamento de todos os sons do game
-    this.load.audio("wall", "../assets/hit1.mp3");
-    this.load.audio("walk", "../assets/stone1.mp3");
-    this.load.audio("ambient", "../assets/ambient.mp3");
-    this.load.audio("walk2", "../assets/stone4.mp3");
-    this.load.audio("lose", "../assets/explode1.mp3");
+    this.load.audio("wall", "../sounds/hit1.ogg");
+    this.load.audio("walk", "../sounds/stone1.ogg");
+    this.load.audio("ambient", "../sounds/ambient.ogg");
+    this.load.audio("walk2", "../sounds/stone4.ogg");
+    this.load.audio("lose", "../sounds/explode1.ogg");
 
     this.load.tilemapTiledJSON("objectCollider", "../assets/objectCollider.json");
     this.load.image("tiles", "../assets/mapPeck.png");
@@ -51,7 +51,7 @@
     player.setCollideWorldBounds(true);
     this.physics.add.collider(player, objectCollider, hitWall, null, true);
     //tempo
-    timer = 60;
+    timer = 10;
   
     const anims = this.anims;
     anims.create({

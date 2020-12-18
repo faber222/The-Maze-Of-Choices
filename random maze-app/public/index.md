@@ -15,3 +15,7 @@
     <p>Foi criado um mapa labirinto, onde o personagem foi animado, e possui colisão</p>
     <p>Foi feita a divisão por cenas, onde o arquivo principal importa todas as cenas, no caso o index.js faz esse trabalho, e exporta tudo no final, cada cena vai importar a proxima e exportar a si mesma.</p>
     <p>Ainda falta melhorar a animação do personagem e a escola do labirinto</p>
+
+<h1>TUDO SOBRE A EDIÇÃO 18/12</h1>
+    <p>EU FIZ UMA MUDANÇA, ACRESCENTANDO UMA PASTA CHAMADA SOUNDS, ONDE NELA, COLOQUEI TODOS OS ARQUIVOS DE SOM DO GAME, RETIRANDO ELES DOS ASSETS.</p>
+    <p>Deixei apenas no assets, arquivos de imagem e .json, assim, não fica muito poluída a pasta.<p>
