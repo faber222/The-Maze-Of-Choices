@@ -8,7 +8,7 @@ var button;
 
 cena0.preload = function () {
   // Imagem de fundo
-  this.load.image("caveira", "../assets/cena0.png");
+  this.load.image("start", "../assets/cena0.png");
   this.load.audio("abertura", "../assets/wait.mp3");
 };
 
@@ -20,7 +20,7 @@ cena0.create = function () {
      
 
     // Botão com a imagem de fundo
-   button = this.add.image(400, 400, "caveira", 0).setInteractive();
+   button = this.add.image(400, 400, "start", 0).setInteractive();
 
   // Ao clicar no botão, inicia a cena 1
     button.on( "pointerdown", function () {
