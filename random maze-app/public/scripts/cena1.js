@@ -20,11 +20,11 @@
   
   cena1.preload = function () {
     //carregamento de todos os sons do game
-    this.load.audio("wall", "../sounds/hit1.ogg");
-    this.load.audio("walk", "../sounds/stone1.ogg");
-    this.load.audio("ambient", "../sounds/ambient.ogg");
-    this.load.audio("walk2", "../sounds/stone4.ogg");
-    this.load.audio("lose", "../sounds/explode1.ogg");
+    this.load.audio("wall", "../sounds/hit1.mp3");
+    this.load.audio("walk", "../sounds/stone1.mp3");
+    this.load.audio("ambient", "../sounds/ambient.mp3");
+    this.load.audio("walk2", "../sounds/stone4.mp3");
+    this.load.audio("lose", "../sounds/explode1.mp3");
     //carregamento dos mapas
     this.load.tilemapTiledJSON("objectCollider", "../assets/objectCollider.json");
     this.load.image("tiles", "../assets/mapPeck.png");
@@ -55,16 +55,18 @@
     const tileset = map.addTilesetImage("assets", "tiles");
     const ground = map.createStaticLayer("ground", tileset, 0, 0);
     const objectCollider = map.createStaticLayer("objectCollider", tileset, 0, 0);
+
+    
     //código que adiciona a física de posição de spawn, colisão com borda e colisão entre parede
+    objectCollider.setCollisionByProperty({ collider: true });
     player1 = this.physics.add.sprite(100, 100, "player1");
-    player2 = this.physics.add.sprite(100, 110, "player2");
+    player2 = this.physics.add.sprite(100, 120, "player2");
     player1.setCollideWorldBounds(true);
     player2.setCollideWorldBounds(true);
     this.physics.add.collider(player1, objectCollider, hitWall, null, true);
     this.physics.add.collider(player2, objectCollider, hitWall, null, true);
     //colisão que evita um personagem entrar dentro do outro
     this.physics.add.collider(player1, player2, hitWall, null, true);
-    objectCollider.setCollisionByProperty({ collider: true });
 
     //tempo
     timer = 60;
@@ -202,6 +204,7 @@
 function hitWall(objectCollider) {
   //som de batida
   wall.play(); 
+  
 }
 
 //função que faz a contagem regressiva

@@ -9,7 +9,7 @@ var button;
 cena0.preload = function () {
   // Imagem de fundo  
   this.load.image("start", "../assets/cena0.png");
-  this.load.audio("abertura", "../sounds/wait.ogg");
+  this.load.audio("abertura", "../sounds/wait.mp3");
 };
 
 cena0.create = function () {

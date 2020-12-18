@@ -9,7 +9,7 @@ cena2.preload = function () {
   // Imagem de fundo
   this.load.image("gameover", "../assets/gameover.png");
   //musica de fundo
-  this.load.audio("loser", "../sounds/abertura.ogg");
+  this.load.audio("loser", "../sounds/abertura.mp3");
 };
 
 cena2.create = function () {
