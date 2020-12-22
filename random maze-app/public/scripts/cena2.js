@@ -1,5 +1,5 @@
 // Importar a próxima cena
-import { cena0 } from "../scripts/cena0.js";
+import { cena0 } from "./cena0.js";
 
 // Criar a cena 2
 const cena2 = new Phaser.Scene("Cena 2");
@@ -7,9 +7,9 @@ var loser;
 
 cena2.preload = function () {
   // Imagem de fundo
-  this.load.image("gameover", "../assets/gameover.png");
+  this.load.image("gameover", "./random maze-app/public/assets/gameover.png");
   //musica de fundo
-  this.load.audio("loser", "../sounds/abertura.mp3");
+  this.load.audio("loser", "./random maze-app/public/sounds/abertura.mp3");
 };
 
 cena2.create = function () {

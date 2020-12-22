@@ -1,4 +1,4 @@
-  import { cena2 } from "../scripts/cena2.js";
+  import { cena2 } from "./cena2.js";
 
   const cena1 = new Phaser.Scene ("cena1");
 
@@ -20,21 +20,21 @@
   
   cena1.preload = function () {
     //carregamento de todos os sons do game
-    this.load.audio("wall", "../sounds/hit1.mp3");
-    this.load.audio("walk", "../sounds/stone1.mp3");
-    this.load.audio("ambient", "../sounds/ambient.mp3");
-    this.load.audio("walk2", "../sounds/stone4.mp3");
-    this.load.audio("lose", "../sounds/explode1.mp3");
+    this.load.audio("wall", "./random maze-app/public/sounds/hit1.mp3");
+    this.load.audio("walk", "./random maze-app/public/sounds/stone1.mp3");
+    this.load.audio("ambient", "./random maze-app/public/sounds/ambient.mp3");
+    this.load.audio("walk2", "./random maze-app/public/sounds/stone4.mp3");
+    this.load.audio("lose", "./random maze-app/public/sounds/explode1.mp3");
     //carregamento dos mapas
-    this.load.tilemapTiledJSON("objectCollider", "../assets/objectCollider.json");
-    this.load.image("tiles", "../assets/mapPeck.png");
-    this.load.tilemapTiledJSON("map", "../assets/map.json");
+    this.load.tilemapTiledJSON("objectCollider", "./random maze-app/public/assets/objectCollider.json");
+    this.load.image("tiles", "./random maze-app/public/assets/mapPeck.png");
+    this.load.tilemapTiledJSON("map", "./random maze-app/public/assets/map.json");
     //carregamento dos dois personagens
-    this.load.spritesheet("player1", "../assets/player1.png", {
+    this.load.spritesheet("player1", "./random maze-app/public/assets/player1.png", {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.spritesheet("player2", "../assets/player2.png", {
+    this.load.spritesheet("player2", "./random maze-app/public/assets/player2.png", {
       frameWidth: 16,
       frameHeight: 16,
     });
