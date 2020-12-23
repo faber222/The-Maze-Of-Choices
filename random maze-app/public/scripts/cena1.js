@@ -1,6 +1,6 @@
   import { cena2 } from "./cena2.js";
-
-  const cena1 = new Phaser.Scene ("cena1");
+  import { cena0 } from "./cena0.js";
+  const cena1 = new Phaser.Scene ("Cena 1");
 
   var player1;
   var player2;
@@ -11,6 +11,7 @@
   var right;
   var timer;
   var timerText;
+  var timedEvent;
   var wall;
   var walk;
   var ambient;
@@ -19,6 +20,8 @@
   var win;
   var button;
   var FKey;
+  var life;
+  var lifeText;
   
   cena1.preload = function () {
     //carregamento de todos os sons do game
@@ -63,7 +66,6 @@
     const ground = map.createStaticLayer("ground", tileset, 0, 0);
     const objectCollider = map.createStaticLayer("objectCollider", tileset, 0, 0);
 
-
     //código que adiciona a física de posição de spawn, colisão com borda e colisão entre parede
     objectCollider.setCollisionByProperty({ collider: true });
     player1 = this.physics.add.sprite(350, 170, "player1");
@@ -76,21 +78,31 @@
     this.physics.add.collider(player1, player2, hitWall, null, true);
 
     //tempo
-    timer = 60;
+    timer = 10;
     //contagem regressiva
-    var timedEvent = this.time.addEvent({
+     timedEvent = this.time.addEvent({
       delay: 1000,
       callback: countdown,
       callbackScope: this,
       loop: true,
     });
-    //relógio na tela
-    timerText = this.add.text(16, 16, timer, {
+     //relógio na tela
+     timerText = this.add.text(16, 16, timer, {
       fontSize: "32px",
       fill: "#FFF",
     });
     timerText.setScrollFactor(0);
 
+    //vida do personagem
+    life = 30;
+    //mostra o quanto de vida tem
+    lifeText = this.add.text(16, 50, life, {
+      fontSize: "32px",
+      fill: "#cccccc",
+    });
+    lifeText.setScrollFactor(0);
+
+    //tamanho do mapa alem da camera
     this.cameras.main.setBounds(0, 0, 1920, 1080);
     this.physics.world.setBounds(0, 0, 1920, 1080);
     //Camera vai seguir o personagem
@@ -127,7 +139,6 @@
       },
       this
     );
-
     //animação do personagem 1 e 2
     const anims = this.anims;
     anims.create({
@@ -262,10 +273,20 @@
       player2.body.setVelocityY(0);
     }
 }
-function hitWall(objectCollider) {
+function hitWall() {
   //som de batida
   wall.play(); 
-  
+  //diminui um de vida do personagem
+  life -= 1;
+  lifeText.setText(life);
+  if (life === 0) {
+    //toca som de bomba
+    lose.play();
+    //para a musica ambient do cena1
+    ambient.stop();
+    //evita que fique com vida negativa
+    life += 1;
+  }
 }
 
 //função que faz a contagem regressiva
@@ -273,13 +294,11 @@ function countdown() {
   // Reduz o contador em 1 segundo
   timer -= 1;
   timerText.setText(timer);
-
   // Se o contador chegar a zero, inicia a cena 2
   if (timer === 0) {
     //toca som de bomba
     lose.play();
-    //trilha.stop();
-    this.scene.start(cena2);
+    this.scene.start(cena0);
     //para a musica ambient do cena1
     ambient.stop();
   } 
