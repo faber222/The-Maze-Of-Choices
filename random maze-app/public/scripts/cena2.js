@@ -18,7 +18,7 @@ cena2.create = function () {
     loser.play();
     loser.setLoop(true);
   // Botão com a imagem de fundo
-  var button = this.add.image(400, 375, "gameover", 0).setInteractive();
+  var button = this.add.image(400, 400, "gameover", 0).setInteractive();
   // Ao clicar no botão, volta para a cena 1
   button.on("pointerdown", function () {
       this.scene.start(cena0);

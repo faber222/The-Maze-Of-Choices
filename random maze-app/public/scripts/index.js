@@ -19,7 +19,7 @@ const config = {
       parent: "game",
       autoCenter: Phaser.Scale.CENTER_BOTH,
       width: 800,
-      height: 600,
+      height: 800,
     },
     scene: [cena0, cena1, cena2],
   };
