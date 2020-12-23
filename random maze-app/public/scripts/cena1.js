@@ -78,7 +78,7 @@
     this.physics.add.collider(player1, player2, hitWall, null, true);
 
     //tempo
-    timer = 10;
+    timer = 60;
     //contagem regressiva
      timedEvent = this.time.addEvent({
       delay: 1000,
