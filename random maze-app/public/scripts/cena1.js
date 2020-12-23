@@ -17,6 +17,8 @@
   var walk2;
   var lose;
   var win;
+  var button;
+  var FKey;
   
   cena1.preload = function () {
     //carregamento de todos os sons do game
@@ -29,6 +31,11 @@
     this.load.tilemapTiledJSON("objectCollider", "./random maze-app/public/assets/objectCollider.json");
     this.load.image("tiles", "./random maze-app/public/assets/mapPeck.png");
     this.load.tilemapTiledJSON("map", "./random maze-app/public/assets/map.json");
+    //carregamento do ícone fullscreen
+    this.load.spritesheet("fullscreen", "./random maze-app/public/assets/fullscreen.png", {
+      frameWidth: 64,
+      frameHeight: 64,
+    });
     //carregamento dos dois personagens
     this.load.spritesheet("player1", "./random maze-app/public/assets/player1.png", {
       frameWidth: 16,
@@ -69,7 +76,7 @@
     this.physics.add.collider(player1, player2, hitWall, null, true);
 
     //tempo
-    timer = 60;
+    timer = 10;
     //contagem regressiva
     var timedEvent = this.time.addEvent({
       delay: 1000,
@@ -88,7 +95,39 @@
     this.physics.world.setBounds(0, 0, 1920, 1080);
     //Camera vai seguir o personagem
     this.cameras.main.startFollow(player1);
-  
+
+    //botão fullscreen
+    button = this.add
+    .image(800 - 16, 16, "fullscreen", 0)
+    .setOrigin(1, 0)
+    .setInteractive()
+    .setScrollFactor(0);
+    //função que gera o evento que ocorre quando clica no button
+    button.on("pointerup",function () {
+        if (this.scale.isFullscreen) {
+          button.setFrame(0);
+          this.scale.stopFullscreen();
+        } else {
+          button.setFrame(1);
+          this.scale.startFullscreen();
+        }
+      },
+      this
+    );
+    // Tecla "F" também ativa/desativa tela cheia
+    FKey = this.input.keyboard.addKey("F");
+    FKey.on("down", function () {
+        if (this.scale.isFullscreen) {
+          button.setFrame(0);
+          this.scale.stopFullscreen();
+        } else {
+          button.setFrame(1);
+          this.scale.startFullscreen();
+        }
+      },
+      this
+    );
+
     //animação do personagem 1 e 2
     const anims = this.anims;
     anims.create({

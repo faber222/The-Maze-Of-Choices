@@ -17,11 +17,8 @@ cena0.create = function () {
     abertura = this.sound.add("abertura");
     abertura.play();
     abertura.setLoop(true);
-     
-
     // Botão com a imagem de fundo
-   button = this.add.image(400, 400, "start", 0).setInteractive();
-
+   button = this.add.image(400, 300, "start", 0).setInteractive();
   // Ao clicar no botão, inicia a cena 1
     button.on( "pointerdown", function () {
         this.scene.start(cena1);
