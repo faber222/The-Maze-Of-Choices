@@ -114,6 +114,7 @@
     .setOrigin(1, 0)
     .setInteractive()
     .setScrollFactor(0);
+    
     //função que gera o evento que ocorre quando clica no button
     button.on("pointerup",function () {
         if (this.scale.isFullscreen) {
@@ -126,6 +127,7 @@
       },
       this
     );
+
     // Tecla "F" também ativa/desativa tela cheia
     FKey = this.input.keyboard.addKey("F");
     FKey.on("down", function () {
@@ -139,6 +141,7 @@
       },
       this
     );
+
     //animação do personagem 1 e 2
     const anims = this.anims;
     anims.create({
@@ -213,6 +216,7 @@
       frameRate: 5,
       repeat: -1,
     });
+
     //seleção do controle dos personagens 1 e 2
     cursors = this.input.keyboard.createCursorKeys();
     up = this.input.keyboard.addKey("W");
@@ -226,36 +230,35 @@
     if (cursors.left.isDown) {
       //barulho enquanto anda
       walk.play();
-      player1.body.setVelocityX(-100);
+      player1.body.setVelocityX(-50);
       player1.anims.play("left1", true);
     } else if (cursors.right.isDown) {
       //barulho enquanto anda
       walk.play();
-      player1.body.setVelocityX(100);
+      player1.body.setVelocityX(50);
       player1.anims.play("right1", true);
     } else {
       player1.body.setVelocity(0);
       player1.anims.play("stopped1", true);
     }
     if (cursors.up.isDown) {
-      player1.body.setVelocityY(-100);
+      player1.body.setVelocityY(-50);
       player1.anims.play("up1", true);
       //barulho enquanto anda
       walk2.play();
     } else if (cursors.down.isDown) {
-      player1.body.setVelocityY(100);
+      player1.body.setVelocityY(50);
       //barulho enquanto anda
       walk2.play();
     } else {
       player1.body.setVelocityY(0);
-    }
-
+    }  
     if (left.isDown) {
-      player2.body.setVelocityX(-100);
+      player2.body.setVelocityX(-50);
       player2.anims.play("left2", true);
       walk.play();
     } else if (right.isDown) {
-      player2.body.setVelocityX(100);
+      player2.body.setVelocityX(50);
       player2.anims.play("right2", true);
       walk.play();
     } else {
@@ -263,16 +266,18 @@
       player2.anims.play("stopped2", true);
     }
     if (up.isDown) {
-      player2.body.setVelocityY(-100);
+      player2.body.setVelocityY(-50);
       player2.anims.play("up2", true);
       walk2.play();
     } else if (down.isDown) {
-      player2.body.setVelocityY(100);
+      player2.body.setVelocityY(50);
       walk2.play();
     } else {
       player2.body.setVelocityY(0);
     }
 }
+
+//função que faz o som de batida na parede, reconhece dano
 function hitWall() {
   //som de batida
   wall.play(); 
@@ -282,6 +287,8 @@ function hitWall() {
   if (life === 0) {
     //toca som de bomba
     lose.play();
+    //se a life acabar, zera o cronometro, fazendo com que o jogo acabe
+    timer = 0;
     //para a musica ambient do cena1
     ambient.stop();
     //evita que fique com vida negativa
@@ -295,9 +302,12 @@ function countdown() {
   timer -= 1;
   timerText.setText(timer);
   // Se o contador chegar a zero, inicia a cena 2
-  if (timer === 0) {
+  if (timer <= 0 ) {
+    //faz com que o temporizador mostre apenas 0 antes de trocar de cena "coisa bem rápida"
+    timer = 0;
     //toca som de bomba
     lose.play();
+    //começa a cena2 
     this.scene.start(cena2);
     //para a musica ambient do cena1
     ambient.stop();

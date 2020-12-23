@@ -7,7 +7,7 @@ var button;
 
 cena0.preload = function () {
   // Imagem de fundo  
-  this.load.image("start", "./random maze-app/public/assets/cena0.png");
+  this.load.image("start", "./random maze-app/public/assets/start.png");
   this.load.audio("abertura", "./random maze-app/public/sounds/wait.mp3");
 };
 
