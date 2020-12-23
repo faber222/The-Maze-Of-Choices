@@ -298,7 +298,7 @@ function countdown() {
   if (timer === 0) {
     //toca som de bomba
     lose.play();
-    this.scene.start(cena0);
+    this.scene.start(cena2);
     //para a musica ambient do cena1
     ambient.stop();
   } 
