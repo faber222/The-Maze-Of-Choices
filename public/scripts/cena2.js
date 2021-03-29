@@ -6,9 +6,9 @@ var loser;
 
 cena2.preload = function () {
   // Imagem de fundo
-  this.load.image("gameover", "./random maze-app/public/assets/gameover.png");
+  this.load.image("gameover", "./public/assets/gameover.png");
   //musica de fundo
-  this.load.audio("loser", "./random maze-app/public/sounds/abertura.mp3");
+  this.load.audio("loser", "./public/sounds/abertura.mp3");
 };
 
 cena2.create = function () {

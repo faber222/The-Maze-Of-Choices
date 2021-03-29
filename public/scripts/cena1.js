@@ -25,26 +25,26 @@
   
   cena1.preload = function () {
     //carregamento de todos os sons do game
-    this.load.audio("wall", "./random maze-app/public/sounds/hit1.mp3");
-    this.load.audio("walk", "./random maze-app/public/sounds/stone1.mp3");
-    this.load.audio("ambient", "./random maze-app/public/sounds/ambient.mp3");
-    this.load.audio("walk2", "./random maze-app/public/sounds/stone4.mp3");
-    this.load.audio("lose", "./random maze-app/public/sounds/explode1.mp3");
+    this.load.audio("wall", "./public/sounds/hit1.mp3");
+    this.load.audio("walk", "./public/sounds/stone1.mp3");
+    this.load.audio("ambient", "./public/sounds/ambient.mp3");
+    this.load.audio("walk2", "./public/sounds/stone4.mp3");
+    this.load.audio("lose", "./public/sounds/explode1.mp3");
     //carregamento dos mapas
-    this.load.tilemapTiledJSON("objectCollider", "./random maze-app/public/assets/objectCollider.json");
-    this.load.image("tiles", "./random maze-app/public/assets/mapPeck.png");
-    this.load.tilemapTiledJSON("map", "./random maze-app/public/assets/map.json");
+    this.load.tilemapTiledJSON("objectCollider", "./public/assets/objectCollider.json");
+    this.load.image("tiles", "./public/assets/mapPeck.png");
+    this.load.tilemapTiledJSON("map", "./public/assets/map.json");
     //carregamento do ícone fullscreen
-    this.load.spritesheet("fullscreen", "./random maze-app/public/assets/fullscreen.png", {
+    this.load.spritesheet("fullscreen", "./public/assets/fullscreen.png", {
       frameWidth: 64,
       frameHeight: 64,
     });
     //carregamento dos dois personagens
-    this.load.spritesheet("player1", "./random maze-app/public/assets/player1.png", {
+    this.load.spritesheet("player1", "./public/assets/player1.png", {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.spritesheet("player2", "./random maze-app/public/assets/player2.png", {
+    this.load.spritesheet("player2", "./public/assets/player2.png", {
       frameWidth: 16,
       frameHeight: 16,
     });
