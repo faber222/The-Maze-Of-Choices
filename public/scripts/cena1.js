@@ -25,26 +25,26 @@
   
   cena1.preload = function () {
     //carregamento de todos os sons do game
-    this.load.audio("wall", "./public/sounds/hit1.mp3");
-    this.load.audio("walk", "./public/sounds/stone1.mp3");
-    this.load.audio("ambient", "./public/sounds/ambient.mp3");
-    this.load.audio("walk2", "./public/sounds/stone4.mp3");
-    this.load.audio("lose", "./public/sounds/explode1.mp3");
+    this.load.audio("wall", "./sounds/hit1.mp3");
+    this.load.audio("walk", "./sounds/stone1.mp3");
+    this.load.audio("ambient", "./sounds/ambient.mp3");
+    this.load.audio("walk2", "./sounds/stone4.mp3");
+    this.load.audio("lose", "./sounds/explode1.mp3");
     //carregamento dos mapas
-    this.load.tilemapTiledJSON("objectCollider", "./public/assets/objectCollider.json");
-    this.load.image("tiles", "./public/assets/mapPeck.png");
-    this.load.tilemapTiledJSON("map", "./public/assets/map.json");
+    this.load.tilemapTiledJSON("objectCollider", "./assets/objectCollider.json");
+    this.load.image("tiles", "./assets/mapPeck.png");
+    this.load.tilemapTiledJSON("map", "./assets/map.json");
     //carregamento do ícone fullscreen
-    this.load.spritesheet("fullscreen", "./public/assets/fullscreen.png", {
+    this.load.spritesheet("fullscreen", "./assets/fullscreen.png", {
       frameWidth: 64,
       frameHeight: 64,
     });
     //carregamento dos dois personagens
-    this.load.spritesheet("player1", "./public/assets/player1.png", {
+    this.load.spritesheet("player1", "./assets/player1.png", {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.spritesheet("player2", "./public/assets/player2.png", {
+    this.load.spritesheet("player2", "./assets/player2.png", {
       frameWidth: 16,
       frameHeight: 16,
     });

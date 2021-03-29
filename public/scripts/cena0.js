@@ -7,8 +7,8 @@ var button;
 
 cena0.preload = function () {
   // Imagem de fundo  
-  this.load.image("start", "./public/assets/start.png");
-  this.load.audio("abertura", "./public/sounds/wait.mp3");
+  this.load.image("start", "./assets/start.png");
+  this.load.audio("abertura", "./sounds/wait.mp3");
 };
 
 cena0.create = function () {
