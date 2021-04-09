@@ -41,8 +41,8 @@
     });
     //carregamento dos dois personagens
     this.load.spritesheet("player1", "./assets/player1.png", {
-      frameWidth: 16,
-      frameHeight: 16,
+      frameWidth: 17.5,
+      frameHeight: 18,
     });
     this.load.spritesheet("player2", "./assets/player2.png", {
       frameWidth: 16,
@@ -151,7 +151,7 @@
         start: 9,
         end: 11,
       }),
-      frameRate: 10,
+      frameRate: 3,
       repeat: -1,
     });
     anims.create({
@@ -160,7 +160,7 @@
         start: 10,
         end: 14,
       }),
-      frameRate: 10,
+      frameRate: 3,
       repeat: -1,
     });
     anims.create({
@@ -169,7 +169,7 @@
         start: 3,
         end: 5,
       }),
-      frameRate: 10,
+      frameRate: 3,
       repeat: -1,
     });
     anims.create({
@@ -178,7 +178,7 @@
         start: 4,
         end: 9,
       }),
-      frameRate: 10,
+      frameRate: 3,
       repeat: -1,
     });
     anims.create({
@@ -187,7 +187,7 @@
         start: 0,
         end: 2,
       }),
-      frameRate: 2,
+      frameRate: 3,
       repeat: -1,
     });
     anims.create({
@@ -196,7 +196,7 @@
         start: 15,
         end: 18,
       }),
-      frameRate: 2,
+      frameRate: 3,
       repeat: -1,
     });
     anims.create({
@@ -205,7 +205,7 @@
         start: 6,
         end: 8,
       }),
-      frameRate: 5,
+      frameRate: 3,
       repeat: -1,
     });
     anims.create({
@@ -214,7 +214,7 @@
         start: 0,
         end: 3,
       }),
-      frameRate: 5,
+      frameRate: 3,
       repeat: -1,
     });
 
