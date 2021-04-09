@@ -2,7 +2,7 @@
   import { cena0 } from "./cena0.js";
   const cena1 = new Phaser.Scene ("Cena 1");
 
-  var player1;
+  var player;
   var player2;
   var cursors;
   var up;
@@ -40,7 +40,7 @@
       frameHeight: 64,
     });
     //carregamento dos dois personagens
-    this.load.spritesheet("player1", "./assets/player1.png", {
+    this.load.spritesheet("player", "./assets/player.png", {
       frameWidth: 17.5,
       frameHeight: 18,
     });
@@ -68,14 +68,14 @@
 
     //código que adiciona a física de posição de spawn, colisão com borda e colisão entre parede
     objectCollider.setCollisionByProperty({ collider: true });
-    player1 = this.physics.add.sprite(350, 170, "player1");
+    player = this.physics.add.sprite(350, 170, "player");
     player2 = this.physics.add.sprite(150, 180, "player2");
-    player1.setCollideWorldBounds(true);
+    player.setCollideWorldBounds(true);
     player2.setCollideWorldBounds(true);
-    this.physics.add.collider(player1, objectCollider, hitWall, null, true);
+    this.physics.add.collider(player, objectCollider, hitWall, null, true);
     this.physics.add.collider(player2, objectCollider, hitWall, null, true);
     //colisão que evita um personagem entrar dentro do outro
-    this.physics.add.collider(player1, player2, hitWall, null, true);
+    this.physics.add.collider(player, player2, hitWall, null, true);
 
     //tempo
     timer = 60;
@@ -106,7 +106,7 @@
     this.cameras.main.setBounds(0, 0, 1920, 1080);
     this.physics.world.setBounds(0, 0, 1920, 1080);
     //Camera vai seguir o personagem
-    this.cameras.main.startFollow(player1, true, 0.09, 0.09);
+    this.cameras.main.startFollow(player, true, 0.09, 0.09);
     this.cameras.main.setZoom(5);
 
     //botão fullscreen
@@ -147,7 +147,7 @@
     const anims = this.anims;
     anims.create({
       key: "left1",
-      frames: anims.generateFrameNames("player1", {
+      frames: anims.generateFrameNames("player", {
         start: 9,
         end: 11,
       }),
@@ -165,7 +165,7 @@
     });
     anims.create({
       key: "right1",
-      frames: anims.generateFrameNames("player1", {
+      frames: anims.generateFrameNames("player", {
         start: 3,
         end: 5,
       }),
@@ -183,7 +183,7 @@
     });
     anims.create({
       key: "up1",
-      frames: anims.generateFrameNames("player1", {
+      frames: anims.generateFrameNames("player", {
         start: 0,
         end: 2,
       }),
@@ -201,7 +201,7 @@
     });
     anims.create({
       key: "stopped1",
-      frames: anims.generateFrameNames("player1", {
+      frames: anims.generateFrameNames("player", {
         start: 6,
         end: 8,
       }),
@@ -231,28 +231,28 @@
     if (cursors.left.isDown) {
       //barulho enquanto anda
       walk.play();
-      player1.body.setVelocityX(-50);
-      player1.anims.play("left1", true);
+      player.body.setVelocityX(-50);
+      player.anims.play("left1", true);
     } else if (cursors.right.isDown) {
       //barulho enquanto anda
       walk.play();
-      player1.body.setVelocityX(50);
-      player1.anims.play("right1", true);
+      player.body.setVelocityX(50);
+      player.anims.play("right1", true);
     } else {
-      player1.body.setVelocity(0);
-      player1.anims.play("stopped1", true);
+      player.body.setVelocity(0);
+      player.anims.play("stopped1", true);
     }
     if (cursors.up.isDown) {
-      player1.body.setVelocityY(-50);
-      player1.anims.play("up1", true);
+      player.body.setVelocityY(-50);
+      player.anims.play("up1", true);
       //barulho enquanto anda
       walk2.play();
     } else if (cursors.down.isDown) {
-      player1.body.setVelocityY(50);
+      player.body.setVelocityY(50);
       //barulho enquanto anda
       walk2.play();
     } else {
-      player1.body.setVelocityY(0);
+      player.body.setVelocityY(0);
     }  
     if (left.isDown) {
       player2.body.setVelocityX(-50);
