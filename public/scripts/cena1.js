@@ -148,8 +148,8 @@
     anims.create({
       key: "left1",
       frames: anims.generateFrameNames("player1", {
-        start: 10,
-        end: 14,
+        start: 9,
+        end: 11,
       }),
       frameRate: 10,
       repeat: -1,
@@ -166,8 +166,8 @@
     anims.create({
       key: "right1",
       frames: anims.generateFrameNames("player1", {
-        start: 4,
-        end: 9,
+        start: 3,
+        end: 5,
       }),
       frameRate: 10,
       repeat: -1,
@@ -184,8 +184,8 @@
     anims.create({
       key: "up1",
       frames: anims.generateFrameNames("player1", {
-        start: 15,
-        end: 18,
+        start: 0,
+        end: 2,
       }),
       frameRate: 2,
       repeat: -1,
@@ -202,8 +202,8 @@
     anims.create({
       key: "stopped1",
       frames: anims.generateFrameNames("player1", {
-        start: 0,
-        end: 3,
+        start: 6,
+        end: 8,
       }),
       frameRate: 5,
       repeat: -1,
