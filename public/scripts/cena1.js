@@ -106,7 +106,6 @@
     this.cameras.main.setBounds(0, 0, 1920, 1080);
     this.physics.world.setBounds(0, 0, 1920, 1080);
     //Camera vai seguir o personagem
-    //this.cameras.main.startFollow(player1);
     this.cameras.main.startFollow(player1, true, 0.09, 0.09);
     this.cameras.main.setZoom(5);
 
