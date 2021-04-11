@@ -1,14 +1,9 @@
   import { cena2 } from "./cena2.js";
-  import { cena0 } from "./cena0.js";
   const cena1 = new Phaser.Scene ("Cena 1");
 
   var player;
   var player2;
   var cursors;
-  var up;
-  var down;
-  var left;
-  var right;
   var timer;
   var timerText;
   var timedEvent;
@@ -22,7 +17,13 @@
   var FKey;
   var life;
   var lifeText;
+  var jogador;
+  var self;
+  var physics;
+  var time;
+  var cameras;
   
+
   cena1.preload = function () {
     //carregamento de todos os sons do game
     this.load.audio("wall", "./sounds/hit1.mp3");
@@ -48,7 +49,7 @@
       frameWidth: 16,
       frameHeight: 16,
     });
-  }
+}
   
   cena1.create = function () {
     //musicas
@@ -70,44 +71,10 @@
     objectCollider.setCollisionByProperty({ collider: true });
     player = this.physics.add.sprite(350, 170, "player");
     player2 = this.physics.add.sprite(150, 180, "player2");
-    player.setCollideWorldBounds(true);
-    player2.setCollideWorldBounds(true);
-    this.physics.add.collider(player, objectCollider, hitWall, null, true);
-    this.physics.add.collider(player2, objectCollider, hitWall, null, true);
-    //colisão que evita um personagem entrar dentro do outro
-    this.physics.add.collider(player, player2, hitWall, null, true);
-
-    //tempo
-    timer = 60;
-    //contagem regressiva
-     timedEvent = this.time.addEvent({
-      delay: 1000,
-      callback: countdown,
-      callbackScope: this,
-      loop: true,
-    });
-     //relógio na tela
-     timerText = this.add.text(16, 16, timer, {
-      fontSize: "32px",
-      fill: "#FFF",
-    });
-    timerText.setScrollFactor(0);
-
-    //vida do personagem
-    life = 100;
-    //mostra o quanto de vida tem
-    lifeText = this.add.text(16, 50, life, {
-      fontSize: "32px",
-      fill: "#cccccc",
-    });
-    lifeText.setScrollFactor(0);
 
     //tamanho do mapa alem da camera
     this.cameras.main.setBounds(0, 0, 1920, 1080);
     this.physics.world.setBounds(0, 0, 1920, 1080);
-    //Camera vai seguir o personagem
-    this.cameras.main.startFollow(player, true, 0.09, 0.09);
-    this.cameras.main.setZoom(5);
 
     //botão fullscreen
     button = this.add
@@ -128,7 +95,6 @@
       },
       this
     );
-
     // Tecla "F" também ativa/desativa tela cheia
     FKey = this.input.keyboard.addKey("F");
     FKey.on("down", function () {
@@ -142,7 +108,6 @@
       },
       this
     );
-
     //animação do personagem 1 e 2
     const anims = this.anims;
     anims.create({
@@ -217,64 +182,144 @@
       frameRate: 3,
       repeat: -1,
     });
-
-    //seleção do controle dos personagens 1 e 2
+    //seleção do controle dos personagens
     cursors = this.input.keyboard.createCursorKeys();
-    up = this.input.keyboard.addKey("W");
-    down = this.input.keyboard.addKey("S");
-    left = this.input.keyboard.addKey("A");
-    right = this.input.keyboard.addKey("D");    
-    }
-  
+    //Conectar no servidor via WedSocket
+    this.socket = io();
+    //Dispadar evento quando jogador entra na partida
+    self = this;
+    physics = this.physics;
+    cameras = this.cameras;
+    time = this.time;
+
+    this.socket.on("jogadores", function(jogadores){
+      if(jogadores.primeiro === self.socket.id){
+        //Define jogador como o primeiro
+        jogador = 1;
+        player.setCollideWorldBounds(true);
+        physics.add.collider(player, objectCollider, hitWall, null, true);
+        //Camera vai seguir o personagem
+        cameras.main.startFollow(player, true, 0.09, 0.09);
+        cameras.main.setZoom(5);
+
+      } else if (jogadores.segundo === self.socket.id){
+        //Define jogador como o segundo
+        jogador = 2;
+        player2.setCollideWorldBounds(true);
+        physics.add.collider(player2, objectCollider, hitWall, null, true);
+        //Camera vai seguir o personagem
+        cameras.main.startFollow(player2, true, 0.09, 0.09);
+        cameras.main.setZoom(5);
+      }
+      //começa a contagem apenas quando os dois estão conectados
+      console.log(jogadores)
+      if (jogadores.primeiro !== undefined && jogadores.segundo !== undefined) {
+        //tempo
+        timer = 60;
+      //contagem regressiva
+        timedEvent = time.addEvent({
+        delay: 1000,
+        callback: countdown,
+        callbackScope: this,
+        loop: true,
+      });
+      };
+    });
+    //desenha o outro jogador na tela
+    this.socket.on("desenharOutroJogador", ({ frame, x, y }) => {
+      if (jogador === 1){
+        player2.setFrame(frame);
+        player2.x = x;
+        player2.y = y;
+      } else if (jogador === 2) {
+        player.setFrame(frame);
+        player.x = x;
+        player.y = y;
+      }
+    });
+      //relógio na tela
+      timerText = this.add.text(16, 16, timer, {
+       fontSize: "32px",
+       fill: "#FFF",
+     });
+     timerText.setScrollFactor(0);
+ 
+     //vida do personagem
+     life = 100;
+     //mostra o quanto de vida tem
+     lifeText = this.add.text(16, 50, life, {
+       fontSize: "32px",
+       fill: "#cccccc",
+     });
+     lifeText.setScrollFactor(0);
+
+}
   //código que comanda o que fazer quando ambos andarem
   cena1.update = function () {
-    if (cursors.left.isDown) {
-      //barulho enquanto anda
-      walk.play();
-      player.body.setVelocityX(-50);
-      player.anims.play("left1", true);
-    } else if (cursors.right.isDown) {
-      //barulho enquanto anda
-      walk.play();
-      player.body.setVelocityX(50);
-      player.anims.play("right1", true);
-    } else {
-      player.body.setVelocity(0);
-      player.anims.play("stopped1", true);
-    }
-    if (cursors.up.isDown) {
-      player.body.setVelocityY(-50);
-      player.anims.play("up1", true);
-      //barulho enquanto anda
-      walk2.play();
-    } else if (cursors.down.isDown) {
-      player.body.setVelocityY(50);
-      //barulho enquanto anda
-      walk2.play();
-    } else {
-      player.body.setVelocityY(0);
-    }  
-    if (left.isDown) {
-      player2.body.setVelocityX(-50);
-      player2.anims.play("left2", true);
-      walk.play();
-    } else if (right.isDown) {
-      player2.body.setVelocityX(50);
-      player2.anims.play("right2", true);
-      walk.play();
-    } else {
-      player2.body.setVelocity(0);
-      player2.anims.play("stopped2", true);
-    }
-    if (up.isDown) {
-      player2.body.setVelocityY(-50);
-      player2.anims.play("up2", true);
-      walk2.play();
-    } else if (down.isDown) {
-      player2.body.setVelocityY(50);
-      walk2.play();
-    } else {
-      player2.body.setVelocityY(0);
+    if (jogador === 1 && timer >= 0){
+      if (cursors.left.isDown) {
+        //barulho enquanto anda
+        walk.play();
+        player.body.setVelocityX(-50);
+        player.anims.play("left1", true);
+      } else if (cursors.right.isDown) {
+        //barulho enquanto anda
+        walk.play();
+        player.body.setVelocityX(50);
+        player.anims.play("right1", true);
+      } else {
+        player.body.setVelocity(0);
+        player.anims.play("stopped1", true);
+      }
+      if (cursors.up.isDown) {
+        player.body.setVelocityY(-50);
+        player.anims.play("up1", true);
+        //barulho enquanto anda
+        walk2.play();
+      } else if (cursors.down.isDown) {
+        player.body.setVelocityY(50);
+        //barulho enquanto anda
+        walk2.play();
+      } else {
+        player.body.setVelocityY(0);
+      }  
+      this.socket.emit("estadoDoJogador", {
+        frame: player.anims.currentFrame.index,
+        x: player.body.x,
+        y: player.body.y,
+      });
+    } else if (jogador === 2 && timer >= 0) {
+      if (cursors.left.isDown) {
+        //barulho enquanto anda
+        walk.play();
+        player2.body.setVelocityX(-50);
+        player2.anims.play("left2", true);
+      } else if (cursors.right.isDown) {
+        //barulho enquanto anda
+        walk.play();
+        player2.body.setVelocityX(50);
+        player2.anims.play("right2", true);
+      } else {
+        player2.body.setVelocity(0);
+        player2.anims.play("stopped2", true);
+      }
+      if (cursors.up.isDown) {
+        player2.body.setVelocityY(-50);
+        player2.anims.play("up2", true);
+        //barulho enquanto anda
+        walk2.play();
+      } else if (cursors.down.isDown) {
+        player2.body.setVelocityY(50);
+        //barulho enquanto anda
+        walk2.play();
+      } else {
+        player2.body.setVelocityY(0);
+      }
+      this.socket.emit("estadoDoJogador", {
+        frame: player2.anims.currentFrame.index,
+        x: player2.body.x,
+        y: player2.body.y,
+      });
     }
 }
 
