@@ -22,6 +22,14 @@
   var physics;
   var time;
   var cameras;
+  var socket;
+  var ice_servers = {
+    iceServers: [{ urls: "stun:stun.l.google.com:19302" }],
+  };
+  var localConnection;
+  var remoteConnection;
+  var midias;
+  const audio = document.querySelector("audio");
   
 
   cena1.preload = function () {
@@ -184,6 +192,7 @@
     });
     //seleção do controle dos personagens
     cursors = this.input.keyboard.createCursorKeys();
+
     //Conectar no servidor via WedSocket
     this.socket = io();
     //Dispadar evento quando jogador entra na partida
@@ -191,6 +200,7 @@
     physics = this.physics;
     cameras = this.cameras;
     time = this.time;
+    socket = this.socket;
 
     this.socket.on("jogadores", function(jogadores){
       if(jogadores.primeiro === self.socket.id){
@@ -202,6 +212,13 @@
         cameras.main.startFollow(player, true, 0.09, 0.09);
         cameras.main.setZoom(5);
 
+        navigator.mediaDevices
+        .getUserMedia({ video: false, audio: true })
+        .then((stream) => {
+          midias = stream;
+        })
+        .catch((error) => console.log(error));
+
       } else if (jogadores.segundo === self.socket.id){
         //Define jogador como o segundo
         jogador = 2;
@@ -210,13 +227,40 @@
         //Camera vai seguir o personagem
         cameras.main.startFollow(player2, true, 0.09, 0.09);
         cameras.main.setZoom(5);
+
+        navigator.mediaDevices.getUserMedia({ video: false, audio: true })
+        .then((stream) => {
+          midias = stream;
+          localConnection = new RTCPeerConnection(ice_servers);
+          midias.getTracks().forEach((track) => 
+            localConnection.addTrack(track, midias));
+            localConnection.onicecandidate = ({ candidate }) => {
+              candidate &&
+                socket.emit("candidate", jogadores.primeiro, candidate);
+            };
+          console.log(midias);
+          localConnection.ontrack = ({ streams: [midias] }) => {
+            audio.srcObject = midias;
+          };
+          localConnection.createOffer()
+            .then((offer) => localConnection.setLocalDescription(offer))
+            .then(() => {
+              socket.emit(
+                "offer",
+                jogadores.primeiro,
+                localConnection.localDescription
+              );
+            });
+        })
+        .catch((error) => console.log(error));
+
       }
       //começa a contagem apenas quando os dois estão conectados
-      console.log(jogadores)
+      console.log(jogadores);
       if (jogadores.primeiro !== undefined && jogadores.segundo !== undefined) {
         //tempo
         timer = 60;
-      //contagem regressiva
+        //contagem regressiva
         timedEvent = time.addEvent({
         delay: 1000,
         callback: countdown,
@@ -225,6 +269,36 @@
       });
       };
     });
+
+    this.socket.on("offer", (socketId, description) => {
+      remoteConnection = new RTCPeerConnection(ice_servers);
+      midias
+        .getTracks()
+        .forEach((track) => remoteConnection.addTrack(track, midias));
+      remoteConnection.onicecandidate = ({ candidate }) => {
+        candidate && socket.emit("candidate", socketId, candidate);
+      };
+      remoteConnection.ontrack = ({ streams: [midias] }) => {
+        audio.srcObject = midias;
+      };
+      remoteConnection
+        .setRemoteDescription(description)
+        .then(() => remoteConnection.createAnswer())
+        .then((answer) => remoteConnection.setLocalDescription(answer))
+        .then(() => {
+          socket.emit("answer", socketId, remoteConnection.localDescription);
+        });
+    });
+  
+    socket.on("answer", (description) => {
+      localConnection.setRemoteDescription(description);
+    });
+  
+    socket.on("candidate", (candidate) => {
+      const conn = localConnection || remoteConnection;
+      conn.addIceCandidate(new RTCIceCandidate(candidate));
+    });
+
     //desenha o outro jogador na tela
     this.socket.on("desenharOutroJogador", ({ frame, x, y }) => {
       if (jogador === 1){
