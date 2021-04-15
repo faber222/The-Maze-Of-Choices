@@ -78,7 +78,7 @@
     //código que adiciona a física de posição de spawn, colisão com borda e colisão entre parede
     objectCollider.setCollisionByProperty({ collider: true });
     player = this.physics.add.sprite(350, 170, "player");
-    player2 = this.physics.add.sprite(150, 180, "player2");
+    player2 = this.physics.add.sprite(350, 180, "player2");
 
     //tamanho do mapa alem da camera
     this.cameras.main.setBounds(0, 0, 1920, 1080);
