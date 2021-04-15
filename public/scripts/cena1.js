@@ -31,7 +31,6 @@
   var midias;
   const audio = document.querySelector("audio");
   
-
   cena1.preload = function () {
     //carregamento de todos os sons do game
     this.load.audio("wall", "./sounds/hit1.mp3");
@@ -41,8 +40,8 @@
     this.load.audio("lose", "./sounds/explode1.mp3");
     //carregamento dos mapas
     this.load.tilemapTiledJSON("objectCollider", "./assets/objectCollider.json");
-    this.load.image("tiles", "./assets/mapPeck.png");
     this.load.tilemapTiledJSON("map", "./assets/map.json");
+    this.load.image("tiles", "./assets/mapPeck.png");
     //carregamento do ícone fullscreen
     this.load.spritesheet("fullscreen", "./assets/fullscreen.png", {
       frameWidth: 64,
@@ -210,7 +209,7 @@
         physics.add.collider(player, objectCollider, hitWall, null, true);
         //Camera vai seguir o personagem
         cameras.main.startFollow(player, true, 0.09, 0.09);
-        cameras.main.setZoom(5);
+        cameras.main.setZoom(10);
 
         navigator.mediaDevices
         .getUserMedia({ video: false, audio: true })
@@ -226,7 +225,7 @@
         physics.add.collider(player2, objectCollider, hitWall, null, true);
         //Camera vai seguir o personagem
         cameras.main.startFollow(player2, true, 0.09, 0.09);
-        cameras.main.setZoom(5);
+        cameras.main.setZoom(10);
 
         navigator.mediaDevices.getUserMedia({ video: false, audio: true })
         .then((stream) => {
