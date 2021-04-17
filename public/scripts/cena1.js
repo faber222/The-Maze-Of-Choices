@@ -105,6 +105,8 @@ import { cena2 } from "./cena2.js";
 
     //tamanho do mapa alem da camera
     this.cameras.main.setBounds(0, 0, 1920, 1080);
+    //this.cameras.main.setViewport(0, 0, 800, 600);
+    //this.fadeCamera = this.cameras.add(0, 600, 800, 800); 
     this.physics.world.setBounds(0, 0, 1920, 1080);
 
     //botão fullscreen

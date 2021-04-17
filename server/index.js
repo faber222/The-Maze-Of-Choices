@@ -39,7 +39,7 @@ io.on("connection", function (socket){
         if (jogadores.primeiro === socket.id) {
             jogadores.primeiro = undefined;
         }
-        if (jogadores.segundo === socket.id){
+        else if (jogadores.segundo === socket.id){
             jogadores.segundo = undefined;
         }
         io.emit("jogadores", jogadores);
