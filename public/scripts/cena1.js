@@ -1,4 +1,4 @@
-  import { cena2 } from "./cena2.js";
+import { cena2 } from "./cena2.js";
   const cena1 = new Phaser.Scene ("Cena 1");
 
   var player;
@@ -7,6 +7,13 @@
   var timer;
   var timerText;
   var timedEvent;
+  var pointer;
+  var touchX;
+  var touchY;
+  var direita;
+  var esquerda;
+  var cima;
+  var baixo;
   var wall;
   var walk;
   var ambient;
@@ -55,6 +62,23 @@
     this.load.spritesheet("player2", "./assets/player2.png", {
       frameWidth: 16,
       frameHeight: 16,
+    });
+    // D-pad
+    this.load.spritesheet("esquerda", "assets/esquerda.png", {
+      frameWidth: 64,
+      frameHeight: 64,
+    });
+    this.load.spritesheet("direita", "assets/direita.png", {
+      frameWidth: 64,
+      frameHeight: 64,  
+    });
+    this.load.spritesheet("cima", "assets/cima.png", {
+      frameWidth: 64,
+      frameHeight: 64,
+    });
+    this.load.spritesheet("baixo", "assets/baixo.png", {
+      frameWidth: 64,
+      frameHeight: 64,
     });
 }
   
@@ -189,8 +213,28 @@
       frameRate: 3,
       repeat: -1,
     });
+    // Interação por toque de tela (até 2 toques simultâneos: 0 a 1)
+    pointer = this.input.addPointer(1);
     //seleção do controle dos personagens
     cursors = this.input.keyboard.createCursorKeys();
+
+    // D-pad
+    esquerda = this.add
+      .image(50, 550, "esquerda", 0)
+      .setInteractive()
+      .setScrollFactor(0);
+    direita = this.add
+      .image(125, 550, "direita", 0)
+      .setInteractive()
+      .setScrollFactor(0);
+    cima = this.add
+      .image(750, 475, "cima", 0)
+      .setInteractive()
+      .setScrollFactor(0);
+    baixo = this.add
+      .image(750, 550, "baixo", 0)
+      .setInteractive()
+      .setScrollFactor(0);
 
     //Conectar no servidor via WedSocket
     this.socket = io();
@@ -209,8 +253,66 @@
         physics.add.collider(player, objectCollider, hitWall, null, true);
         //Camera vai seguir o personagem
         cameras.main.startFollow(player, true, 0.09, 0.09);
-        cameras.main.setZoom(10);
-
+        cameras.main.setZoom();
+        // D-pad: para cada direção já os eventos
+        // para tocar a tela ("pointerover")
+        // e ao terminar essa interação ("pointerout")
+        esquerda.on("pointerover", () => {
+          if (timer > 0) {
+            esquerda.setFrame(1);
+            player.setVelocityX(-160);
+            player.anims.play("left1", true);
+          }
+        });
+        esquerda.on("pointerout", () => {
+          if (timer > 0) {
+            esquerda.setFrame(0);
+            player.setVelocityX(0);
+            player.anims.play("stopped1", true);
+          }
+        });
+        direita.on("pointerover", () => {
+          if (timer > 0) {
+            direita.setFrame(1);
+            player.setVelocityX(160);
+            player.anims.play("right1", true);
+          }
+        });
+        direita.on("pointerout", () => {
+          if (timer > 0) {
+            direita.setFrame(0);
+            player.setVelocityX(0);
+            player.anims.play("stopped1", true);
+          }
+        });
+        cima.on("pointerover", () => {
+          if (timer > 0) {
+            cima.setFrame(1);
+            player.setVelocityY(-160);
+            player.anims.play("up1", true);
+          }
+        });
+        cima.on("pointerout", () => {
+          if (timer > 0) {
+            cima.setFrame(0);
+            player.setVelocityY(0);
+            player.anims.play("stopped1", true);
+          }
+        });
+        baixo.on("pointerover", () => {
+          if (timer > 0) {
+            baixo.setFrame(1);
+            player.setVelocityY(160);
+            player.anims.play("stopped1", true);
+          }
+        });
+        baixo.on("pointerout", () => {
+          if (timer > 0) {
+            baixo.setFrame(0);
+            player.setVelocityY(0);
+            player.anims.play("stopped1", true);
+          }
+        });
         navigator.mediaDevices
         .getUserMedia({ video: false, audio: true })
         .then((stream) => {
@@ -225,8 +327,66 @@
         physics.add.collider(player2, objectCollider, hitWall, null, true);
         //Camera vai seguir o personagem
         cameras.main.startFollow(player2, true, 0.09, 0.09);
-        cameras.main.setZoom(10);
-
+        cameras.main.setZoom();
+        // D-pad: para cada direção já os eventos
+        // para tocar a tela ("pointerover")
+        // e ao terminar essa interação ("pointerout")
+        esquerda.on("pointerover", () => {
+          if (timer > 0) {
+            esquerda.setFrame(1);
+            player2.setVelocityX(-160);
+            player2.anims.play("left2", true);
+          }
+        });
+        esquerda.on("pointerout", () => {
+          if (timer > 0) {
+            esquerda.setFrame(0);
+            player2.setVelocityX(0);
+            player2.anims.play("stopped2", true);
+          }
+        });
+        direita.on("pointerover", () => {
+          if (timer > 0) {
+            direita.setFrame(1);
+            player2.setVelocityX(160);
+            player2.anims.play("right2", true);
+          }
+        });
+        direita.on("pointerout", () => {
+          if (timer > 0) {
+            direita.setFrame(0);
+            player2.setVelocityX(0);
+            player2.anims.play("stopped2", true);
+          }
+        });
+        cima.on("pointerover", () => {
+          if (timer > 0) {
+            cima.setFrame(1);
+            player2.setVelocityY(-160);
+            player2.anims.play("up2", true);
+          }
+        });
+        cima.on("pointerout", () => {
+          if (timer > 0) {
+            cima.setFrame(0);
+            player2.setVelocityY(0);
+            player2.anims.play("stopped2", true);
+          }
+        });
+        baixo.on("pointerover", () => {
+          if (timer > 0) {
+            baixo.setFrame(1);
+            player2.setVelocityY(160);
+            player2.anims.play("stopped2", true);
+          }
+        });
+        baixo.on("pointerout", () => {
+          if (timer > 0) {
+            baixo.setFrame(0);
+            player2.setVelocityY(0);
+            player2.anims.play("stopped2", true);
+          }
+        });
         navigator.mediaDevices.getUserMedia({ video: false, audio: true })
         .then((stream) => {
           midias = stream;
