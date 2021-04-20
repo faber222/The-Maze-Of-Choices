@@ -10,10 +10,6 @@ import { cena2 } from "./cena2.js";
   var pointer;
   var touchX;
   var touchY;
-  var direita;
-  var esquerda;
-  var cima;
-  var baixo;
   var wall;
   var walk;
   var ambient;
@@ -22,8 +18,6 @@ import { cena2 } from "./cena2.js";
   var win;
   var button;
   var FKey;
-  var life;
-  var lifeText;
   var jogador;
   var self;
   var physics;
@@ -63,23 +57,7 @@ import { cena2 } from "./cena2.js";
       frameWidth: 16,
       frameHeight: 16,
     });
-    // D-pad
-    this.load.spritesheet("esquerda", "assets/esquerda.png", {
-      frameWidth: 64,
-      frameHeight: 64,
-    });
-    this.load.spritesheet("direita", "assets/direita.png", {
-      frameWidth: 64,
-      frameHeight: 64,  
-    });
-    this.load.spritesheet("cima", "assets/cima.png", {
-      frameWidth: 64,
-      frameHeight: 64,
-    });
-    this.load.spritesheet("baixo", "assets/baixo.png", {
-      frameWidth: 64,
-      frameHeight: 64,
-    });
+  
 }
   
   cena1.create = function () {
@@ -106,7 +84,7 @@ import { cena2 } from "./cena2.js";
     //tamanho do mapa alem da camera
     this.cameras.main.setBounds(0, 0, 1920, 1080);
     //this.cameras.main.setViewport(0, 0, 800, 600);
-    //this.fadeCamera = this.cameras.add(0, 600, 800, 800); 
+    this.fadeCamera = this.cameras.add(0, 720, 800, 800); 
     this.physics.world.setBounds(0, 0, 1920, 1080);
 
     //botão fullscreen
@@ -215,29 +193,8 @@ import { cena2 } from "./cena2.js";
       frameRate: 3,
       repeat: -1,
     });
-    // Interação por toque de tela (até 2 toques simultâneos: 0 a 1)
-    pointer = this.input.addPointer(1);
     //seleção do controle dos personagens
     cursors = this.input.keyboard.createCursorKeys();
-
-    // D-pad
-    esquerda = this.add
-      .image(50, 550, "esquerda", 0)
-      .setInteractive()
-      .setScrollFactor(0);
-    direita = this.add
-      .image(125, 550, "direita", 0)
-      .setInteractive()
-      .setScrollFactor(0);
-    cima = this.add
-      .image(750, 475, "cima", 0)
-      .setInteractive()
-      .setScrollFactor(0);
-    baixo = this.add
-      .image(750, 550, "baixo", 0)
-      .setInteractive()
-      .setScrollFactor(0);
-
     //Conectar no servidor via WedSocket
     this.socket = io();
     //Dispadar evento quando jogador entra na partida
@@ -255,66 +212,8 @@ import { cena2 } from "./cena2.js";
         physics.add.collider(player, objectCollider, hitWall, null, true);
         //Camera vai seguir o personagem
         cameras.main.startFollow(player, true, 0.09, 0.09);
-        cameras.main.setZoom();
-        // D-pad: para cada direção já os eventos
-        // para tocar a tela ("pointerover")
-        // e ao terminar essa interação ("pointerout")
-        esquerda.on("pointerover", () => {
-          if (timer > 0) {
-            esquerda.setFrame(1);
-            player.setVelocityX(-160);
-            player.anims.play("left1", true);
-          }
-        });
-        esquerda.on("pointerout", () => {
-          if (timer > 0) {
-            esquerda.setFrame(0);
-            player.setVelocityX(0);
-            player.anims.play("stopped1", true);
-          }
-        });
-        direita.on("pointerover", () => {
-          if (timer > 0) {
-            direita.setFrame(1);
-            player.setVelocityX(160);
-            player.anims.play("right1", true);
-          }
-        });
-        direita.on("pointerout", () => {
-          if (timer > 0) {
-            direita.setFrame(0);
-            player.setVelocityX(0);
-            player.anims.play("stopped1", true);
-          }
-        });
-        cima.on("pointerover", () => {
-          if (timer > 0) {
-            cima.setFrame(1);
-            player.setVelocityY(-160);
-            player.anims.play("up1", true);
-          }
-        });
-        cima.on("pointerout", () => {
-          if (timer > 0) {
-            cima.setFrame(0);
-            player.setVelocityY(0);
-            player.anims.play("stopped1", true);
-          }
-        });
-        baixo.on("pointerover", () => {
-          if (timer > 0) {
-            baixo.setFrame(1);
-            player.setVelocityY(160);
-            player.anims.play("stopped1", true);
-          }
-        });
-        baixo.on("pointerout", () => {
-          if (timer > 0) {
-            baixo.setFrame(0);
-            player.setVelocityY(0);
-            player.anims.play("stopped1", true);
-          }
-        });
+        cameras.main.setZoom(5);
+        
         navigator.mediaDevices
         .getUserMedia({ video: false, audio: true })
         .then((stream) => {
@@ -329,66 +228,8 @@ import { cena2 } from "./cena2.js";
         physics.add.collider(player2, objectCollider, hitWall, null, true);
         //Camera vai seguir o personagem
         cameras.main.startFollow(player2, true, 0.09, 0.09);
-        cameras.main.setZoom();
-        // D-pad: para cada direção já os eventos
-        // para tocar a tela ("pointerover")
-        // e ao terminar essa interação ("pointerout")
-        esquerda.on("pointerover", () => {
-          if (timer > 0) {
-            esquerda.setFrame(1);
-            player2.setVelocityX(-160);
-            player2.anims.play("left2", true);
-          }
-        });
-        esquerda.on("pointerout", () => {
-          if (timer > 0) {
-            esquerda.setFrame(0);
-            player2.setVelocityX(0);
-            player2.anims.play("stopped2", true);
-          }
-        });
-        direita.on("pointerover", () => {
-          if (timer > 0) {
-            direita.setFrame(1);
-            player2.setVelocityX(160);
-            player2.anims.play("right2", true);
-          }
-        });
-        direita.on("pointerout", () => {
-          if (timer > 0) {
-            direita.setFrame(0);
-            player2.setVelocityX(0);
-            player2.anims.play("stopped2", true);
-          }
-        });
-        cima.on("pointerover", () => {
-          if (timer > 0) {
-            cima.setFrame(1);
-            player2.setVelocityY(-160);
-            player2.anims.play("up2", true);
-          }
-        });
-        cima.on("pointerout", () => {
-          if (timer > 0) {
-            cima.setFrame(0);
-            player2.setVelocityY(0);
-            player2.anims.play("stopped2", true);
-          }
-        });
-        baixo.on("pointerover", () => {
-          if (timer > 0) {
-            baixo.setFrame(1);
-            player2.setVelocityY(160);
-            player2.anims.play("stopped2", true);
-          }
-        });
-        baixo.on("pointerout", () => {
-          if (timer > 0) {
-            baixo.setFrame(0);
-            player2.setVelocityY(0);
-            player2.anims.play("stopped2", true);
-          }
-        });
+        cameras.main.setZoom(5);
+        
         navigator.mediaDevices.getUserMedia({ video: false, audio: true })
         .then((stream) => {
           midias = stream;
@@ -420,7 +261,7 @@ import { cena2 } from "./cena2.js";
       console.log(jogadores);
       if (jogadores.primeiro !== undefined && jogadores.segundo !== undefined) {
         //tempo
-        timer = 60;
+        timer = 0;
         //contagem regressiva
         timedEvent = time.addEvent({
         delay: 1000,
@@ -478,16 +319,6 @@ import { cena2 } from "./cena2.js";
        fill: "#FFF",
      });
      timerText.setScrollFactor(0);
- 
-     //vida do personagem
-     life = 100;
-     //mostra o quanto de vida tem
-     lifeText = this.add.text(16, 50, life, {
-       fontSize: "32px",
-       fill: "#cccccc",
-     });
-     lifeText.setScrollFactor(0);
-
 }
   //código que comanda o que fazer quando ambos andarem
   cena1.update = function () {
@@ -562,37 +393,13 @@ import { cena2 } from "./cena2.js";
 function hitWall() {
   //som de batida
   wall.play(); 
-  //diminui um de vida do personagem
-  life -= 1;
-  lifeText.setText(life);
-  if (life === 0) {
-    //toca som de bomba
-    lose.play();
-    //se a life acabar, zera o cronometro, fazendo com que o jogo acabe
-    timer = 0;
-    //para a musica ambient do cena1
-    ambient.stop();
-    //evita que fique com vida negativa
-    life += 1;
-  }
 }
 
 //função que faz a contagem regressiva
 function countdown() {
-  // Reduz o contador em 1 segundo
-  timer -= 1;
+  // soma 1 segundo
+  timer += 1;
   timerText.setText(timer);
-  // Se o contador chegar a zero, inicia a cena 2
-  if (timer <= 0 ) {
-    //faz com que o temporizador mostre apenas 0 antes de trocar de cena "coisa bem rápida"
-    timer = 0;
-    //toca som de bomba
-    lose.play();
-    //começa a cena2 
-    this.scene.start(cena2);
-    //para a musica ambient do cena1
-    ambient.stop();
-  } 
 }
 
 export { cena1 };
