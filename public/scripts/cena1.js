@@ -3,7 +3,6 @@ import { cena2 } from "./cena2.js";
 
   var player;
   var player2;
-  var cursors;
   var timer;
   var timerText;
   var timedEvent;
@@ -22,8 +21,6 @@ import { cena2 } from "./cena2.js";
   var win;
   var button;
   var FKey;
-  var life;
-  var lifeText;
   var jogador;
   var self;
   var physics;
@@ -106,12 +103,12 @@ import { cena2 } from "./cena2.js";
     //tamanho do mapa alem da camera
     this.cameras.main.setBounds(0, 0, 1920, 1080);
     //this.cameras.main.setViewport(0, 0, 800, 600);
-    //this.fadeCamera = this.cameras.add(0, 600, 800, 800); 
+    this.fadeCamera = this.cameras.add(0, 700, 800, 800); 
     this.physics.world.setBounds(0, 0, 1920, 1080);
 
     //botão fullscreen
     button = this.add
-    .image(800 - 16, 16, "fullscreen", 0)
+    .image(425, 17, "fullscreen", 0)
     .setOrigin(1, 0)
     .setInteractive()
     .setScrollFactor(0);
@@ -217,24 +214,21 @@ import { cena2 } from "./cena2.js";
     });
     // Interação por toque de tela (até 2 toques simultâneos: 0 a 1)
     pointer = this.input.addPointer(1);
-    //seleção do controle dos personagens
-    cursors = this.input.keyboard.createCursorKeys();
-
     // D-pad
     esquerda = this.add
-      .image(50, 550, "esquerda", 0)
+      .image(50, 50, "esquerda", 0)
       .setInteractive()
       .setScrollFactor(0);
     direita = this.add
-      .image(125, 550, "direita", 0)
+      .image(120, 50, "direita", 0)
       .setInteractive()
       .setScrollFactor(0);
     cima = this.add
-      .image(750, 475, "cima", 0)
+      .image(680, 50, "cima", 0)
       .setInteractive()
       .setScrollFactor(0);
     baixo = this.add
-      .image(750, 550, "baixo", 0)
+      .image(750, 50, "baixo", 0)
       .setInteractive()
       .setScrollFactor(0);
 
@@ -255,14 +249,14 @@ import { cena2 } from "./cena2.js";
         physics.add.collider(player, objectCollider, hitWall, null, true);
         //Camera vai seguir o personagem
         cameras.main.startFollow(player, true, 0.09, 0.09);
-        cameras.main.setZoom();
+        cameras.main.setZoom(5);
         // D-pad: para cada direção já os eventos
         // para tocar a tela ("pointerover")
         // e ao terminar essa interação ("pointerout")
         esquerda.on("pointerover", () => {
           if (timer > 0) {
             esquerda.setFrame(1);
-            player.setVelocityX(-160);
+            player.setVelocityX(-50);
             player.anims.play("left1", true);
           }
         });
@@ -276,7 +270,7 @@ import { cena2 } from "./cena2.js";
         direita.on("pointerover", () => {
           if (timer > 0) {
             direita.setFrame(1);
-            player.setVelocityX(160);
+            player.setVelocityX(50);
             player.anims.play("right1", true);
           }
         });
@@ -290,7 +284,7 @@ import { cena2 } from "./cena2.js";
         cima.on("pointerover", () => {
           if (timer > 0) {
             cima.setFrame(1);
-            player.setVelocityY(-160);
+            player.setVelocityY(-50);
             player.anims.play("up1", true);
           }
         });
@@ -304,7 +298,7 @@ import { cena2 } from "./cena2.js";
         baixo.on("pointerover", () => {
           if (timer > 0) {
             baixo.setFrame(1);
-            player.setVelocityY(160);
+            player.setVelocityY(50);
             player.anims.play("stopped1", true);
           }
         });
@@ -329,14 +323,14 @@ import { cena2 } from "./cena2.js";
         physics.add.collider(player2, objectCollider, hitWall, null, true);
         //Camera vai seguir o personagem
         cameras.main.startFollow(player2, true, 0.09, 0.09);
-        cameras.main.setZoom();
+        cameras.main.setZoom(5);
         // D-pad: para cada direção já os eventos
         // para tocar a tela ("pointerover")
         // e ao terminar essa interação ("pointerout")
         esquerda.on("pointerover", () => {
           if (timer > 0) {
             esquerda.setFrame(1);
-            player2.setVelocityX(-160);
+            player2.setVelocityX(-50);
             player2.anims.play("left2", true);
           }
         });
@@ -350,7 +344,7 @@ import { cena2 } from "./cena2.js";
         direita.on("pointerover", () => {
           if (timer > 0) {
             direita.setFrame(1);
-            player2.setVelocityX(160);
+            player2.setVelocityX(50);
             player2.anims.play("right2", true);
           }
         });
@@ -364,7 +358,7 @@ import { cena2 } from "./cena2.js";
         cima.on("pointerover", () => {
           if (timer > 0) {
             cima.setFrame(1);
-            player2.setVelocityY(-160);
+            player2.setVelocityY(-50);
             player2.anims.play("up2", true);
           }
         });
@@ -378,7 +372,7 @@ import { cena2 } from "./cena2.js";
         baixo.on("pointerover", () => {
           if (timer > 0) {
             baixo.setFrame(1);
-            player2.setVelocityY(160);
+            player2.setVelocityY(50);
             player2.anims.play("stopped2", true);
           }
         });
@@ -420,7 +414,7 @@ import { cena2 } from "./cena2.js";
       console.log(jogadores);
       if (jogadores.primeiro !== undefined && jogadores.segundo !== undefined) {
         //tempo
-        timer = 60;
+        timer = 0;
         //contagem regressiva
         timedEvent = time.addEvent({
         delay: 1000,
@@ -478,121 +472,58 @@ import { cena2 } from "./cena2.js";
        fill: "#FFF",
      });
      timerText.setScrollFactor(0);
- 
-     //vida do personagem
-     life = 100;
-     //mostra o quanto de vida tem
-     lifeText = this.add.text(16, 50, life, {
-       fontSize: "32px",
-       fill: "#cccccc",
-     });
-     lifeText.setScrollFactor(0);
-
-}
+    }
   //código que comanda o que fazer quando ambos andarem
-  cena1.update = function () {
-    if (jogador === 1 && timer >= 0){
-      if (cursors.left.isDown) {
-        //barulho enquanto anda
-        walk.play();
-        player.body.setVelocityX(-50);
-        player.anims.play("left1", true);
-      } else if (cursors.right.isDown) {
-        //barulho enquanto anda
-        walk.play();
-        player.body.setVelocityX(50);
-        player.anims.play("right1", true);
-      } else {
-        player.body.setVelocity(0);
-        player.anims.play("stopped1", true);
+cena1.update = function () {
+  if (jogador === 1) {
+    let frame;
+    // Controle do personagem por direcionais
+    if (jogador === 1) {
+      // Testa se há animação do oponente,
+      // caso contrário envia o primeiro frame (0)
+      try {
+        frame = player.anims.currentFrame.index;
+      } catch (e) {
+        frame = 0;
       }
-      if (cursors.up.isDown) {
-        player.body.setVelocityY(-50);
-        player.anims.play("up1", true);
-        //barulho enquanto anda
-        walk2.play();
-      } else if (cursors.down.isDown) {
-        player.body.setVelocityY(50);
-        //barulho enquanto anda
-        walk2.play();
-      } else {
-        player.body.setVelocityY(0);
-      }  
       this.socket.emit("estadoDoJogador", {
-        frame: player.anims.currentFrame.index,
+        frame: frame,
         x: player.body.x,
         y: player.body.y,
       });
-    } else if (jogador === 2 && timer >= 0) {
-      if (cursors.left.isDown) {
-        //barulho enquanto anda
-        walk.play();
-        player2.body.setVelocityX(-50);
-        player2.anims.play("left2", true);
-      } else if (cursors.right.isDown) {
-        //barulho enquanto anda
-        walk.play();
-        player2.body.setVelocityX(50);
-        player2.anims.play("right2", true);
-      } else {
-        player2.body.setVelocity(0);
-        player2.anims.play("stopped2", true);
-      }
-      if (cursors.up.isDown) {
-        player2.body.setVelocityY(-50);
-        player2.anims.play("up2", true);
-        //barulho enquanto anda
-        walk2.play();
-      } else if (cursors.down.isDown) {
-        player2.body.setVelocityY(50);
-        //barulho enquanto anda
-        walk2.play();
-      } else {
-        player2.body.setVelocityY(0);
+      
+    } else if (jogador === 2) {
+      try {
+        frame = player2.anims.currentFrame.index;
+      } catch (e) {
+        frame = 0;
       }
       this.socket.emit("estadoDoJogador", {
-        frame: player2.anims.currentFrame.index,
+        frame: frame,
         x: player2.body.x,
         y: player2.body.y,
       });
     }
+  }
 }
 
 //função que faz o som de batida na parede, reconhece dano
 function hitWall() {
   //som de batida
   wall.play(); 
-  //diminui um de vida do personagem
-  life -= 1;
-  lifeText.setText(life);
-  if (life === 0) {
+  //if (life === 0) {
     //toca som de bomba
-    lose.play();
+    //lose.play();
     //se a life acabar, zera o cronometro, fazendo com que o jogo acabe
-    timer = 0;
     //para a musica ambient do cena1
-    ambient.stop();
-    //evita que fique com vida negativa
-    life += 1;
-  }
+    //ambient.stop();  
 }
 
 //função que faz a contagem regressiva
 function countdown() {
   // Reduz o contador em 1 segundo
-  timer -= 1;
+  timer += 1;
   timerText.setText(timer);
-  // Se o contador chegar a zero, inicia a cena 2
-  if (timer <= 0 ) {
-    //faz com que o temporizador mostre apenas 0 antes de trocar de cena "coisa bem rápida"
-    timer = 0;
-    //toca som de bomba
-    lose.play();
-    //começa a cena2 
-    this.scene.start(cena2);
-    //para a musica ambient do cena1
-    ambient.stop();
-  } 
-}
+  }
 
 export { cena1 };
