@@ -9,10 +9,6 @@ import { cena2 } from "./cena2.js";
   var pointer;
   var touchX;
   var touchY;
-  var direita;
-  var esquerda;
-  var cima;
-  var baixo;
   var wall;
   var walk;
   var ambient;
@@ -60,23 +56,7 @@ import { cena2 } from "./cena2.js";
       frameWidth: 16,
       frameHeight: 16,
     });
-    // D-pad
-    this.load.spritesheet("esquerda", "assets/esquerda.png", {
-      frameWidth: 64,
-      frameHeight: 64,
-    });
-    this.load.spritesheet("direita", "assets/direita.png", {
-      frameWidth: 64,
-      frameHeight: 64,  
-    });
-    this.load.spritesheet("cima", "assets/cima.png", {
-      frameWidth: 64,
-      frameHeight: 64,
-    });
-    this.load.spritesheet("baixo", "assets/baixo.png", {
-      frameWidth: 64,
-      frameHeight: 64,
-    });
+  
 }
   
   cena1.create = function () {
@@ -103,7 +83,11 @@ import { cena2 } from "./cena2.js";
     //tamanho do mapa alem da camera
     this.cameras.main.setBounds(0, 0, 1920, 1080);
     //this.cameras.main.setViewport(0, 0, 800, 600);
+<<<<<<< HEAD
     this.fadeCamera = this.cameras.add(0, 700, 800, 800); 
+=======
+    this.fadeCamera = this.cameras.add(0, 720, 800, 800); 
+>>>>>>> a42b48155f9da3430c8537d3be3723b5e09ddfe9
     this.physics.world.setBounds(0, 0, 1920, 1080);
 
     //botão fullscreen
@@ -212,6 +196,7 @@ import { cena2 } from "./cena2.js";
       frameRate: 3,
       repeat: -1,
     });
+<<<<<<< HEAD
     // Interação por toque de tela (até 2 toques simultâneos: 0 a 1)
     pointer = this.input.addPointer(1);
     // D-pad
@@ -232,6 +217,10 @@ import { cena2 } from "./cena2.js";
       .setInteractive()
       .setScrollFactor(0);
 
+=======
+    //seleção do controle dos personagens
+    cursors = this.input.keyboard.createCursorKeys();
+>>>>>>> a42b48155f9da3430c8537d3be3723b5e09ddfe9
     //Conectar no servidor via WedSocket
     this.socket = io();
     //Dispadar evento quando jogador entra na partida
@@ -250,6 +239,7 @@ import { cena2 } from "./cena2.js";
         //Camera vai seguir o personagem
         cameras.main.startFollow(player, true, 0.09, 0.09);
         cameras.main.setZoom(5);
+<<<<<<< HEAD
         // D-pad: para cada direção já os eventos
         // para tocar a tela ("pointerover")
         // e ao terminar essa interação ("pointerout")
@@ -309,6 +299,9 @@ import { cena2 } from "./cena2.js";
             player.anims.play("stopped1", true);
           }
         });
+=======
+        
+>>>>>>> a42b48155f9da3430c8537d3be3723b5e09ddfe9
         navigator.mediaDevices
         .getUserMedia({ video: false, audio: true })
         .then((stream) => {
@@ -324,6 +317,7 @@ import { cena2 } from "./cena2.js";
         //Camera vai seguir o personagem
         cameras.main.startFollow(player2, true, 0.09, 0.09);
         cameras.main.setZoom(5);
+<<<<<<< HEAD
         // D-pad: para cada direção já os eventos
         // para tocar a tela ("pointerover")
         // e ao terminar essa interação ("pointerout")
@@ -383,6 +377,9 @@ import { cena2 } from "./cena2.js";
             player2.anims.play("stopped2", true);
           }
         });
+=======
+        
+>>>>>>> a42b48155f9da3430c8537d3be3723b5e09ddfe9
         navigator.mediaDevices.getUserMedia({ video: false, audio: true })
         .then((stream) => {
           midias = stream;
@@ -472,7 +469,11 @@ import { cena2 } from "./cena2.js";
        fill: "#FFF",
      });
      timerText.setScrollFactor(0);
+<<<<<<< HEAD
     }
+=======
+}
+>>>>>>> a42b48155f9da3430c8537d3be3723b5e09ddfe9
   //código que comanda o que fazer quando ambos andarem
 cena1.update = function () {
   if (jogador === 1) {
@@ -511,19 +512,29 @@ cena1.update = function () {
 function hitWall() {
   //som de batida
   wall.play(); 
+<<<<<<< HEAD
   //if (life === 0) {
     //toca som de bomba
     //lose.play();
     //se a life acabar, zera o cronometro, fazendo com que o jogo acabe
     //para a musica ambient do cena1
     //ambient.stop();  
+=======
+>>>>>>> a42b48155f9da3430c8537d3be3723b5e09ddfe9
 }
 
 //função que faz a contagem regressiva
 function countdown() {
+<<<<<<< HEAD
   // Reduz o contador em 1 segundo
   timer += 1;
   timerText.setText(timer);
   }
+=======
+  // soma 1 segundo
+  timer += 1;
+  timerText.setText(timer);
+}
+>>>>>>> a42b48155f9da3430c8537d3be3723b5e09ddfe9
 
 export { cena1 };
