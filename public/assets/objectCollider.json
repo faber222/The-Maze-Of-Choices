@@ -2336,7 +2336,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -2345,7 +2345,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -2354,7 +2354,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -2363,7 +2363,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -2372,7 +2372,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -2381,7 +2381,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -2390,7 +2390,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -3272,7 +3272,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -3281,7 +3281,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -3290,7 +3290,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -3299,7 +3299,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -3308,7 +3308,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -3317,7 +3317,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -3326,7 +3326,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -4208,7 +4208,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -4217,7 +4217,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -4226,7 +4226,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -4235,7 +4235,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -4244,7 +4244,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -4253,7 +4253,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -4262,7 +4262,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -5144,7 +5144,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -5153,7 +5153,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -5162,7 +5162,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -5171,7 +5171,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -5180,7 +5180,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -5189,7 +5189,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -5198,7 +5198,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -6080,7 +6080,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -6089,7 +6089,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -6098,7 +6098,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -6107,7 +6107,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -6116,7 +6116,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -6125,7 +6125,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -6134,7 +6134,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -7016,7 +7016,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -7025,7 +7025,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -7034,7 +7034,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -7043,7 +7043,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -7052,7 +7052,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -7061,7 +7061,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -7070,7 +7070,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -7952,7 +7952,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -7961,7 +7961,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -7970,7 +7970,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -7979,7 +7979,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -7988,7 +7988,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -7997,7 +7997,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -8006,7 +8006,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -13154,7 +13154,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -13163,7 +13163,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -13172,7 +13172,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -13181,7 +13181,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -13190,7 +13190,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -25943,7 +25943,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -25952,7 +25952,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -25961,7 +25961,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -25970,7 +25970,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -25979,7 +25979,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -25988,7 +25988,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -26879,7 +26879,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -26888,7 +26888,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -26897,7 +26897,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -26906,7 +26906,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -26915,7 +26915,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -26924,7 +26924,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -27815,7 +27815,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -27824,7 +27824,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -27833,7 +27833,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -27842,7 +27842,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -27851,7 +27851,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -27860,7 +27860,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -28751,7 +28751,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -28760,7 +28760,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -28769,7 +28769,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -28778,7 +28778,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -28787,7 +28787,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -28796,7 +28796,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -29687,7 +29687,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -29696,7 +29696,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -29705,7 +29705,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -29714,7 +29714,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -29723,7 +29723,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -29732,7 +29732,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -32594,7 +32594,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -33530,7 +33530,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -34466,7 +34466,7 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
+                 "value":true
                 }]
         }, 
         {
@@ -37517,11 +37517,6 @@
                 {
                  "name":"collider",
                  "type":"bool",
-                 "value":false
-                }, 
-                {
-                 "name":"victory",
-                 "type":"bool",
                  "value":true
                 }]
         }, 
@@ -37530,11 +37525,6 @@
          "properties":[
                 {
                  "name":"collider",
-                 "type":"bool",
-                 "value":false
-                }, 
-                {
-                 "name":"victory",
                  "type":"bool",
                  "value":true
                 }]

@@ -18,7 +18,6 @@ import { cena2 } from "./cena2.js";
   var ambient;
   var walk2;
   var lose;
-  var win;
   var button;
   var FKey;
   var jogador;
@@ -35,7 +34,7 @@ import { cena2 } from "./cena2.js";
   var midias;
   const audio = document.querySelector("audio");
   
-  cena1.preload = function () {
+cena1.preload = function () {
     //carregamento de todos os sons do game
     this.load.audio("wall", "./sounds/hit1.mp3");
     this.load.audio("walk", "./sounds/stone1.mp3");
@@ -44,6 +43,7 @@ import { cena2 } from "./cena2.js";
     this.load.audio("lose", "./sounds/explode1.mp3");
     //carregamento dos mapas
     this.load.tilemapTiledJSON("objectCollider", "./assets/objectCollider.json");
+    this.load.tilemapTiledJSON("victory", "./assets/objectCollider.json");
     this.load.tilemapTiledJSON("map", "./assets/map.json");
     this.load.image("tiles", "./assets/mapPeck.png");
     //carregamento do ícone fullscreen
@@ -79,7 +79,7 @@ import { cena2 } from "./cena2.js";
     });
 }
   
-  cena1.create = function () {
+cena1.create = function () {
     //musicas
     wall = this.sound.add("wall");
     walk = this.sound.add("walk");
@@ -94,9 +94,10 @@ import { cena2 } from "./cena2.js";
     const tileset = map.addTilesetImage("assets", "tiles");
     const ground = map.createStaticLayer("ground", tileset, 0, 0);
     const objectCollider = map.createStaticLayer("objectCollider", tileset, 0, 0);
-
+    const win = map.createStaticLayer("victory", tileset, 0, 0);
     //código que adiciona a física de posição de spawn, colisão com borda e colisão entre parede
     objectCollider.setCollisionByProperty({ collider: true });
+    win.setCollisionByProperty({ collider: true });
     player = this.physics.add.sprite(350, 170, "player");
     player2 = this.physics.add.sprite(350, 180, "player2");
 
@@ -246,6 +247,7 @@ import { cena2 } from "./cena2.js";
         //Define jogador como o primeiro
         jogador = 1;
         player.setCollideWorldBounds(true);
+        physics.add.collider(player, win, winGame, null, true);
         physics.add.collider(player, objectCollider, hitWall, null, true);
         //Camera vai seguir o personagem
         cameras.main.startFollow(player, true, 0.09, 0.09);
@@ -320,6 +322,7 @@ import { cena2 } from "./cena2.js";
         //Define jogador como o segundo
         jogador = 2;
         player2.setCollideWorldBounds(true);
+        physics.add.collider(player2, win, winGame, null, true);
         physics.add.collider(player2, objectCollider, hitWall, null, true);
         //Camera vai seguir o personagem
         cameras.main.startFollow(player2, true, 0.09, 0.09);
@@ -507,6 +510,11 @@ cena1.update = function () {
   }
 }
 
+function winGame(player, ground) {
+  lose.play();
+  ambient.stop();
+  this.scene.start(cena2);
+ };
 //função que faz o som de batida na parede, reconhece dano
 function hitWall() {
   //som de batida
