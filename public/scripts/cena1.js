@@ -1,4 +1,5 @@
-import { cena2 } from "./cena2.js";
+  import { cena2 } from "./cena2.js";
+  import { cena3 } from "./cena3.js";
   const cena1 = new Phaser.Scene ("Cena 1");
 
   var player;
@@ -507,13 +508,17 @@ cena1.update = function () {
         y: player2.body.y,
       });
     }
+    /*if (winGame = true ) {
+      lose.play;
+      ambient.stop();
+      this.scene.start(cena2)
+    }*/
   }
 }
 
 function winGame(player, ground) {
-  lose.play();
-  ambient.stop();
-  this.scene.start(cena2);
+  wall.play();
+  
  };
 //função que faz o som de batida na parede, reconhece dano
 function hitWall() {
