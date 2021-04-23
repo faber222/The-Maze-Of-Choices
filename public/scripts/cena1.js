@@ -21,7 +21,6 @@ var walk2;
 var lose;
 var button;
 var FKey;
-var AKey;
 var jogador;
 var self;
 var physics;
@@ -145,16 +144,6 @@ cena1.create = function () {
         button.setFrame(1);
         this.scale.startFullscreen();
       }
-    },
-    this
-  );
-
-  // Tecla "F" também ativa/desativa tela cheia
-  AKey = this.input.keyboard.addKey("A");
-  AKey.on(
-    "down",
-    function () {
-      ganhou = true;
     },
     this
   );
