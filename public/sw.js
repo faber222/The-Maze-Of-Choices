@@ -3,7 +3,6 @@ const cacheName = "labirinto-das-escolhas";
 const precacheResources = [
   "./assets/baixo.png",
   "./assets/cima.png",
-  "./assets/cena-1.json",
   "./assets/direita.png",
   "./assets/esquerda.png",
   "./assets/fullscreen.png",
@@ -19,6 +18,7 @@ const precacheResources = [
   "./assets/gameover.png",
   "./assets/objectCollider.json",
   "./assets/start.png",
+  "./assets/victory.png",
   "./sounds/abertura.mp3",
   "./sounds/ambient.mp3",
   "./sounds/explode1.mp3",

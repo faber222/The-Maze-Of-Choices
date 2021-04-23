@@ -9,7 +9,7 @@ var jogadores = {
     segundo: undefined,
 };
 
-//Dispadar evento quando jogador entrar na partida 
+//Dispadar evento quando jogador entrar na partida
 io.on("connection", function (socket){
     if (jogadores.primeiro === undefined){
         jogadores.primeiro = socket.id;
@@ -46,9 +46,10 @@ io.on("connection", function (socket){
         console.log("-Lista de jogadores: &s", jogadores);
     });
 
-    /*socket.on("estadoDoJogador", function (estado){
-        socket.broadcast.emit("desenharOutroJogador", estado)
-    })*/
+    socket.on("ganhou", function (socketId) {
+        console.log("Ganhou:", socketId)
+        socket.broadcast.emit("perdeu", socketId)
+    })
 });
 
 app.use(express.static("./public"));

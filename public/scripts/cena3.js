@@ -1,5 +1,6 @@
 // Importar a próxima cena
 import { cena0 } from "./cena0.js";
+import { cena1 } from "./cena1.js";
 // Criar a cena 2
 const cena3 = new Phaser.Scene("Cena 3");
 var winner;
@@ -28,7 +29,9 @@ cena3.create = function () {
   );
 };
 
-cena3.update = function () {};
+cena3.update = function () {
+
+};
 
 // Exportar a cena
 export { cena3 };
