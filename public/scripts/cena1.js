@@ -58,8 +58,8 @@ cena1.preload = function () {
       frameHeight: 18,
     });
     this.load.spritesheet("player2", "./assets/player2.png", {
-      frameWidth: 16,
-      frameHeight: 16,
+      frameWidth: 17.5,
+      frameHeight: 18,
     });
     // D-pad
     this.load.spritesheet("esquerda", "assets/esquerda.png", {
