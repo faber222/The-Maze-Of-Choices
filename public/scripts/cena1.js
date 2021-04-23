@@ -459,7 +459,7 @@ cena1.create = function () {
     });
 
     //desenha o outro jogador na tela
-    this.socket.on("desenharOutroJogador", ({ frame, x, y }) => {
+    /*this.socket.on("desenharOutroJogador", ({ frame, x, y }) => {
       if (jogador === 1){
         player2.setFrame(frame);
         player2.x = x;
@@ -469,7 +469,7 @@ cena1.create = function () {
         player.x = x;
         player.y = y;
       }
-    });
+    });*/
       //relógio na tela
       timerText = this.add.text(16, 16, timer, {
        fontSize: "32px",
@@ -490,11 +490,11 @@ cena1.update = function () {
       } catch (e) {
         frame = 0;
       }
-      this.socket.emit("estadoDoJogador", {
+      /*this.socket.emit("estadoDoJogador", {
         frame: frame,
         x: player.body.x,
         y: player.body.y,
-      });
+      });*/
       
     } else if (jogador === 2) {
       try {
@@ -502,17 +502,12 @@ cena1.update = function () {
       } catch (e) {
         frame = 0;
       }
-      this.socket.emit("estadoDoJogador", {
+      /*this.socket.emit("estadoDoJogador", {
         frame: frame,
         x: player2.body.x,
         y: player2.body.y,
-      });
+      });*/
     }
-    /*if (winGame = true ) {
-      lose.play;
-      ambient.stop();
-      this.scene.start(cena2)
-    }*/
   }
 }
 
