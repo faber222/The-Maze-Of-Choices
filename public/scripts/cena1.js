@@ -248,6 +248,7 @@ cena1.create = function () {
   time = this.time;
   socket = this.socket;
 
+  
   this.socket.on("jogadores", function (jogadores) {
     if (jogadores.primeiro === self.socket.id) {
       //Define jogador como o primeiro

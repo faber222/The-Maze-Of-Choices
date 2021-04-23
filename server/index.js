@@ -34,6 +34,7 @@ io.on("connection", function (socket){
         socket.to(socketId).emit("candidate", signal);
     });
 
+    
     //Disparar evento quando jogador sair da partida
     socket.on("disconnect", function(){
         if (jogadores.primeiro === socket.id) {
