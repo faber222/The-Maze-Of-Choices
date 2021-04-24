@@ -8,9 +8,7 @@
 <h1>Tecnologias.</h1>
 <p>Pensado como um jogo de plataforma web, ele será todo programado em js, usando também programas de geração de cenários e de personagens. Nossa função será de montar e gerenciar os códigos.</p>
 
-
 <h1>O jogo!</h1>
-<p>A proposta do jogo será um speed run multiplayer de escolhas, nomeado como "O labirinto das escolhas", nele seu objetivo é chegar ao final antes de seu adversário, porém, para cada fase, cada mob ou cada cenário, tudo vai ser diferente. Começando com uma escolha simples, de "VOCÊ DESEJA IR PELA ARENA OU PELO LABIRINTO?", a partir dessa escolha, dois cenário serão apresentados, um cheio de mobs, monstros, salas e problemas(ARENA), e o outro cheio de caminhos ocultos, baús, bifurcações, sem nenhum inimigo. (LABIRINTO). </p>
+<p>A proposta do jogo será um speed run multiplayer de escolhas, nomeado como "O labirinto das escolhas", nele seu objetivo é chegar ao final antes de seu adversário. Começando com uma escolha simples, PRESS START, a partir dessa escolha, você cairá no labirinto, e a partir daí, correr. </p>
 
-<p>O jogo terá um ambiente baseado no game "The legend of the zelda - The minish cap", todo em 16bits, com salas baseadas em pokemon.
-</p>
+<p>O jogo terá um ambiente baseado no game "The legend of the zelda - The minish cap", todo em 16bits.</p>

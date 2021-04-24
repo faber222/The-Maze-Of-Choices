@@ -12,6 +12,7 @@ cena2.preload = function () {
   this.load.audio("loser", "./sounds/abertura.mp3");
 };
 
+ 
 cena2.create = function () {
     //toca a musica de fundo
     loser = this.sound.add("loser");

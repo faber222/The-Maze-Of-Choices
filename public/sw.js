@@ -11,14 +11,15 @@ const precacheResources = [
   "./assets/logo-256.png",
   "./assets/logo-384.png",
   "./assets/logo-512.png",
-  "./assets/map.json",
   "./assets/mapPeck.png",
   "./assets/player2.png",
   "./assets/player.png",
   "./assets/gameover.png",
-  "./assets/objectCollider.json",
   "./assets/start.png",
   "./assets/victory.png",
+  "./assets/map.json",
+  "./assets/objectCollider.json",
+  "./manifest.json",
   "./sounds/abertura.mp3",
   "./sounds/ambient.mp3",
   "./sounds/explode1.mp3",
@@ -32,9 +33,9 @@ const precacheResources = [
   "./scripts/cena2.js",
   "./scripts/index.js",
   "./scripts/app.js",
-  "./index.css",
-  "./manifest.json",
   "./sw.js",
+  "./index.css",
+  
 ];
 
 self.addEventListener("install", (event) => {

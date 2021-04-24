@@ -3,6 +3,7 @@ import { cena1 } from "../scripts/cena1.js";
 import { cena2 } from "../scripts/cena2.js";
 import { cena3 } from "../scripts/cena3.js";
 
+
 const config = {
     type: Phaser.AUTO,
     width: 800,

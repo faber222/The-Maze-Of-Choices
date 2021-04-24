@@ -4,7 +4,6 @@
     <p>Com isso, fiz uma separação, e no arquivo principal, index.html, você só vai encontrar um arquivo contendo links e href para repositórios que se encontram na pasta src.</p>
     <p>Em suma, o código não está tão diferente do tutorial, e para você conseguir rodar, você necessita ter o phaser 3 instalado no seu desktop.</p>
 
-
 <h1>TUDO SOBRE AS NOVAS MUDANÇAS</h1>
     <p>Eu fiz uma mudança nas pastas, onde agora cada arquivo esta dividido em sua respectiva pasta</p>
     <p>Pasta assets esta todas as figuras e arquivos .json</p>

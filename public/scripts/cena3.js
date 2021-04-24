@@ -11,7 +11,7 @@ cena3.preload = function () {
   //musica de fundo
   this.load.audio("winner", "./sounds/abertura.mp3");
 };
-
+ 
 cena3.create = function () {
     //toca a musica de fundo
     winner = this.sound.add("winner");
@@ -30,7 +30,6 @@ cena3.create = function () {
 };
 
 cena3.update = function () {
-
 };
 
 // Exportar a cena

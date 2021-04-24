@@ -248,7 +248,6 @@ cena1.create = function () {
   time = this.time;
   socket = this.socket;
 
-  
   this.socket.on("jogadores", function (jogadores) {
     if (jogadores.primeiro === self.socket.id) {
       //Define jogador como o primeiro
@@ -455,11 +454,9 @@ cena1.create = function () {
         socket.emit("answer", socketId, remoteConnection.localDescription);
       });
   });
-
   socket.on("answer", (description) => {
     localConnection.setRemoteDescription(description);
   });
-
   socket.on("candidate", (candidate) => {
     const conn = localConnection || remoteConnection;
     conn.addIceCandidate(new RTCIceCandidate(candidate));
@@ -477,6 +474,7 @@ cena1.create = function () {
   });
   timerText.setScrollFactor(0);
 };
+
 //código que comanda o que fazer quando ambos andarem
 cena1.update = function () {
   if (jogador === 1) {
@@ -490,22 +488,12 @@ cena1.update = function () {
       } catch (e) {
         frame = 0;
       }
-      /*this.socket.emit("estadoDoJogador", {
-        frame: frame,
-        x: player.body.x,
-        y: player.body.y,
-      });*/
     } else if (jogador === 2) {
       try {
         frame = player2.anims.currentFrame.index;
       } catch (e) {
         frame = 0;
       }
-      /*this.socket.emit("estadoDoJogador", {
-        frame: frame,
-        x: player2.body.x,
-        y: player2.body.y,
-      });*/
     }
   }
 
@@ -513,11 +501,13 @@ cena1.update = function () {
     this.socket.emit("ganhou", self.socket.id);
     ambient.stop();
     ganhou = false;
+    this.socket.disconnect();
     this.scene.start(cena3);
     
   } else if (perdeu === true) {
     ambient.stop();
     perdeu = false;
+    this.socket.disconnect();
     this.scene.start(cena2);
     
   }
