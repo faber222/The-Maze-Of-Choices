@@ -60,16 +60,16 @@
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+:heavy_check_mark: Multiplayer;\
+:heavy_check_mark: Free audio;\
+:heavy_check_mark: Free-to-play;
 
 ## :rocket: Technologies ##
 
 The following tools were used in this project:
 
 - [JS](https://www.javascript.com/)
-- [SOCKET.IO](https://phaser.io/phaser3)
+- [SOCKET.IO](https://socket.io/)
 - [PHASER3](https://phaser.io/phaser3)
 - [NODE.JS](https://nodejs.org/en/)
 - [GIT](https://git-scm.com/)
