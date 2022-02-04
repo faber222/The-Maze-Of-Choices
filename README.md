@@ -1,33 +1,33 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="OLABIRINTO" />
+  <img src="./.github/app.gif" alt="O-LABIRINTO-DAS-ESCOLHAS" />
 
   &#xa0;
 
-  <a href="https://olabirinto.netlify.app">Demo</a> 
+  <a href="https://O-LABIRINTO-DAS-ESCOLHAS.netlify.app">Demo</a> 
 </div>
 
-<h1 align="center">OLABIRINTO</h1>
+<h1 align="center">O-LABIRINTO-DAS-ESCOLHAS</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/faber222/olabirinto?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/faber222/O-LABIRINTO-DAS-ESCOLHAS?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/faber222/olabirinto?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/faber222/O-LABIRINTO-DAS-ESCOLHAS?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/faber222/olabirinto?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/faber222/O-LABIRINTO-DAS-ESCOLHAS?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/faber222/olabirinto?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/faber222/O-LABIRINTO-DAS-ESCOLHAS?color=56BEB8">
 
-  <img alt="Github issues" src="https://img.shields.io/github/issues/faber222/olabirinto?color=56BEB8" >
+  <img alt="Github issues" src="https://img.shields.io/github/issues/faber222/O-LABIRINTO-DAS-ESCOLHAS?color=56BEB8" >
 
-  <img alt="Github forks" src="https://img.shields.io/github/forks/faber222/olabirinto?color=56BEB8" >
+  <img alt="Github forks" src="https://img.shields.io/github/forks/faber222/O-LABIRINTO-DAS-ESCOLHAS?color=56BEB8" >
 
-  <img alt="Github stars" src="https://img.shields.io/github/stars/faber222/olabirinto?color=56BEB8" >
+  <img alt="Github stars" src="https://img.shields.io/github/stars/faber222/O-LABIRINTO-DAS-ESCOLHAS?color=56BEB8" >
 </p>
 
 <!-- Status -->
 
 <h4 align="center"> 
-	🚧  OLABIRINTO 🚀 finished!  🚧
+	🚧  O-LABIRINTO-DAS-ESCOLHAS 🚀 finished!  🚧
 </h4> 
 
 <hr> 
@@ -83,7 +83,7 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ```bash
 # Clone this project
-$ git clone https://github.com/faber222/olabirinto
+$ git clone https://github.com/faber222/O-LABIRINTO-DAS-ESCOLHAS
 
 # Access
 $ cd O-LABIRINTO-DAS-ESCOLHAS
