@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./github/app.gif" alt="O-LABIRINTO-DAS-ESCOLHAS" />
+  <!--<img src="./github/app.gif" alt="O-LABIRINTO-DAS-ESCOLHAS" />-->
 
   &#xa0;
 
