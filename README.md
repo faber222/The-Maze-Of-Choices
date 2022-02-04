@@ -1,9 +1,8 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="O-LABIRINTO-DAS-ESCOLHAS" />
+  <img src="./github/app.gif" alt="O-LABIRINTO-DAS-ESCOLHAS" />
 
   &#xa0;
 
-  <a href="https://O-LABIRINTO-DAS-ESCOLHAS.netlify.app">Demo</a> 
 </div>
 
 <h1 align="center">O-LABIRINTO-DAS-ESCOLHAS</h1>
