@@ -1,5 +1,5 @@
 const version = "0.1.0";
-const cacheName = "labirinto-das-escolhas";
+const cacheName = "The-Maze-Of-Choices";
 const precacheResources = [
   "./assets/baixo.png",
   "./assets/cima.png",

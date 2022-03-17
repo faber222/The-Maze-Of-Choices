@@ -1,32 +1,32 @@
 <div align="center" id="top"> 
-  <!--<img src="./github/app.gif" alt="O-LABIRINTO-DAS-ESCOLHAS" />-->
+  <!--<img src="./github/app.gif" alt="The-Maze-Of-Choices" />-->
 
   &#xa0;
 
 </div>
 
-<h1 align="center">O-LABIRINTO-DAS-ESCOLHAS</h1>
+<h1 align="center">The-Maze-Of-Choices</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/faber222/O-LABIRINTO-DAS-ESCOLHAS?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/faber222/The-Maze-Of-Choices?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/faber222/O-LABIRINTO-DAS-ESCOLHAS?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/faber222/The-Maze-Of-Choices?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/faber222/O-LABIRINTO-DAS-ESCOLHAS?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/faber222/The-Maze-Of-Choices?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/faber222/O-LABIRINTO-DAS-ESCOLHAS?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/faber222/The-Maze-Of-Choices?color=56BEB8">
 
-  <img alt="Github issues" src="https://img.shields.io/github/issues/faber222/O-LABIRINTO-DAS-ESCOLHAS?color=56BEB8" >
+  <img alt="Github issues" src="https://img.shields.io/github/issues/faber222/The-Maze-Of-Choices?color=56BEB8" >
 
-  <img alt="Github forks" src="https://img.shields.io/github/forks/faber222/O-LABIRINTO-DAS-ESCOLHAS?color=56BEB8" >
+  <img alt="Github forks" src="https://img.shields.io/github/forks/faber222/The-Maze-Of-Choices?color=56BEB8" >
 
-  <img alt="Github stars" src="https://img.shields.io/github/stars/faber222/O-LABIRINTO-DAS-ESCOLHAS?color=56BEB8" >
+  <img alt="Github stars" src="https://img.shields.io/github/stars/faber222/The-Maze-Of-Choices?color=56BEB8" >
 </p>
 
 <!-- Status -->
 
 <h4 align="center"> 
-	🚧  O-LABIRINTO-DAS-ESCOLHAS 🚀 finished!  🚧
+	🚧  The-Maze-Of-Choices 🚀 finished!  🚧
 </h4> 
 
 <hr> 
@@ -45,18 +45,18 @@
 
 ## :dart: About ##
 
-<h1>O projeto.</h1>
-<p>Este projeto nasceu com a proposta de ser uma forma prática e sólida de praticar todos os conteúdos aprendidos no curso de Administração de Redes de Computadores , que tem por objetivo trazer uma compreensão de assuntos como linguagens de programação e algoritmos; tecnologias e protocolos de redes de computadores; conhecimentos gerais sobre as funcionalidades do computador.</p>
+<h1>The Project.</h1>
+<p>This project was born with the proposal to be a practical and solid way to practice all the contents learned in the Computer Networks Administration course, which aims to bring an understanding of subjects such as programming languages ​​and algorithms; computer network technologies and protocols; general knowledge of the computer's functionality.</p>
 
-<p>A ideia central do projeto é construída em torno do desenvolvimento de uma aplicação web para jogos utilizando técnicas de programação e tecnologias de comunicação. (P.B.BERTOTTI-11/2020)</p>
+<p>The central idea of ​​the project is built around the development of a web application for games using programming techniques and communication technologies.. (P.B.BERTOTTI-11/2020)</p>
 
-<h1>Tecnologias.</h1>
-<p>Pensado como um jogo de plataforma web, ele será todo programado em js, usando também programas de geração de cenários e de personagens. Nossa função será de montar e gerenciar os códigos.</p>
+<h1>Technologies.</h1>
+<p>Thought as a web platform game, it will be all programmed in js, also using programs to generate scenarios and characters. Our role will be to assemble and manage the codes.</p>
 
-<h1>O jogo!</h1>
-<p>A proposta do jogo será um speed run multiplayer de escolhas, nomeado como "O labirinto das escolhas", nele seu objetivo é chegar ao final antes de seu adversário. Começando com uma escolha simples, PRESS START, a partir dessa escolha, você cairá no labirinto, e a partir daí, correr. </p>
+<h1>The game!</h1>
+<p>The game's proposal will be a multiplayer speed run of choices, named as "The Maze of Choices", in which your objective is to reach the end before your opponent. Starting with a simple choice, PRESS START, from that choice, you will fall into the maze, and from there, run. </p>
 
-<p>O jogo terá um ambiente baseado no game "The legend of the zelda - The minish cap", todo em 16bits.</p>
+<p>The game will have an environment based on the game "The legend of the zelda - The minish cap", all in 16bit.</p>
 
 ## :sparkles: Features ##
 
@@ -82,10 +82,10 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ```bash
 # Clone this project
-$ git clone https://github.com/faber222/O-LABIRINTO-DAS-ESCOLHAS
+$ git clone https://github.com/faber222/The-Maze-Of-Choices
 
 # Access
-$ cd O-LABIRINTO-DAS-ESCOLHAS
+$ cd The-Maze-Of-Choices
 
 # Install dependencies
 $ npm install 
